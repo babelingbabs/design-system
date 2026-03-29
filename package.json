@@ -21,11 +21,13 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npm run tokens && tsc && vite build",
     "build-storybook": "storybook build",
     "storybook": "storybook dev -p 6006",
     "type-check": "tsc --noEmit",
-    "lint": "eslint src --ext ts,tsx"
+    "lint": "eslint src --ext ts,tsx",
+    "tokens": "node style-dictionary.config.mjs",
+    "tokens:watch": "nodemon --watch tokens/ --ext json --exec \"node style-dictionary.config.mjs\""
   },
   "peerDependencies": {
     "react": "^18.0.0",
@@ -35,20 +37,22 @@
     "framer-motion": "^11.0.0"
   },
   "devDependencies": {
+    "@storybook/addon-designs": "^11.1.3",
     "@storybook/addon-docs": "^8.0.0",
     "@storybook/addon-essentials": "^8.0.0",
     "@storybook/addon-themes": "^8.0.0",
     "@storybook/react": "^8.0.0",
     "@storybook/react-vite": "^8.0.0",
-    "storybook": "^8.0.0",
+    "@tailwindcss/vite": "^4.0.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@vitejs/plugin-react": "^4.0.0",
     "autoprefixer": "^10.4.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "storybook": "^8.0.0",
+    "style-dictionary": "^4.4.0",
     "tailwindcss": "^4.0.0",
-    "@tailwindcss/vite": "^4.0.0",
     "typescript": "^5.0.0",
     "vite": "^5.0.0",
     "vite-plugin-dts": "^3.0.0"

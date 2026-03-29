@@ -1,0 +1,81 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-bg-base: #fafafa; /** Page background */
+  --color-bg-subtle: #f5f5f5; /** Elevated surface */
+  --color-bg-muted: #efefef; /** Recessed / input bg */
+  --color-bg-inverse: #1a1a1a; /** Dark contrast block */
+  --color-fg-primary: #1a1a1a; /** Primary text */
+  --color-fg-secondary: #555555; /** Secondary text */
+  --color-fg-tertiary: #8a8a8a; /** Placeholder, captions */
+  --color-fg-disabled: #bbbbbb; /** Disabled states */
+  --color-fg-inverse: #fafafa; /** Text on dark */
+  --color-border-subtle: #e8e8e8; /** Hairline borders */
+  --color-border-default: #d4d4d4; /** Standard border */
+  --color-border-strong: #aaaaaa; /** Emphasized border */
+  --color-accent-50: #f0f4f8;
+  --color-accent-100: #d9e4ee;
+  --color-accent-200: #b3c9dd;
+  --color-accent-300: #8daecc;
+  --color-accent-400: #6793bb;
+  --color-accent-500: #4a7ba7; /** Primary accent */
+  --color-accent-600: #3b6286;
+  --color-accent-700: #2c4a65;
+  --color-accent-800: #1e3144;
+  --color-accent-900: #0f1922;
+  --color-semantic-success: #2d6a4f;
+  --color-semantic-success-bg: #d8f3dc;
+  --color-semantic-warning: #7b5800;
+  --color-semantic-warning-bg: #fff3cd;
+  --color-semantic-error: #9b1d20;
+  --color-semantic-error-bg: #fcdcdc;
+  --color-semantic-info: #1a4a6e;
+  --color-semantic-info-bg: #d6eaf8;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-6: 24px;
+  --spacing-8: 32px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --spacing-24: 96px;
+  --spacing-32: 128px;
+  --spacing-48: 192px;
+  --spacing-64: 256px;
+  --font-family-sans: Inter, system-ui, -apple-system, sans-serif;
+  --font-family-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --text-caption2: 0.6875rem;
+  --text-caption1: 0.75rem;
+  --text-footnote: 0.8125rem;
+  --text-subhead: 0.9375rem;
+  --text-callout: 1rem;
+  --text-body: 1.0625rem;
+  --text-headline: 1.0625rem;
+  --text-title3: 1.25rem;
+  --text-title2: 1.375rem;
+  --text-title1: 1.75rem;
+  --text-large-title: 2.125rem;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-full: 9999px;
+  --duration-instant: 0ms;
+  --duration-fast: 100ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+  --duration-glacial: 500ms;
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-precise: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}

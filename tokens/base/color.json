@@ -1,0 +1,44 @@
+{
+  "color": {
+    "bg": {
+      "base":    { "$value": "#FAFAFA", "$type": "color", "$description": "Page background" },
+      "subtle":  { "$value": "#F5F5F5", "$type": "color", "$description": "Elevated surface" },
+      "muted":   { "$value": "#EFEFEF", "$type": "color", "$description": "Recessed / input bg" },
+      "inverse": { "$value": "#1A1A1A", "$type": "color", "$description": "Dark contrast block" }
+    },
+    "fg": {
+      "primary":   { "$value": "#1A1A1A", "$type": "color", "$description": "Primary text" },
+      "secondary": { "$value": "#555555", "$type": "color", "$description": "Secondary text" },
+      "tertiary":  { "$value": "#8A8A8A", "$type": "color", "$description": "Placeholder, captions" },
+      "disabled":  { "$value": "#BBBBBB", "$type": "color", "$description": "Disabled states" },
+      "inverse":   { "$value": "#FAFAFA", "$type": "color", "$description": "Text on dark" }
+    },
+    "border": {
+      "subtle":  { "$value": "#E8E8E8", "$type": "color", "$description": "Hairline borders" },
+      "default": { "$value": "#D4D4D4", "$type": "color", "$description": "Standard border" },
+      "strong":  { "$value": "#AAAAAA", "$type": "color", "$description": "Emphasized border" }
+    },
+    "accent": {
+      "50":  { "$value": "#F0F4F8", "$type": "color" },
+      "100": { "$value": "#D9E4EE", "$type": "color" },
+      "200": { "$value": "#B3C9DD", "$type": "color" },
+      "300": { "$value": "#8DAECC", "$type": "color" },
+      "400": { "$value": "#6793BB", "$type": "color" },
+      "500": { "$value": "#4A7BA7", "$type": "color", "$description": "Primary accent" },
+      "600": { "$value": "#3B6286", "$type": "color" },
+      "700": { "$value": "#2C4A65", "$type": "color" },
+      "800": { "$value": "#1E3144", "$type": "color" },
+      "900": { "$value": "#0F1922", "$type": "color" }
+    },
+    "semantic": {
+      "success":    { "$value": "#2D6A4F", "$type": "color" },
+      "success-bg": { "$value": "#D8F3DC", "$type": "color" },
+      "warning":    { "$value": "#7B5800", "$type": "color" },
+      "warning-bg": { "$value": "#FFF3CD", "$type": "color" },
+      "error":      { "$value": "#9B1D20", "$type": "color" },
+      "error-bg":   { "$value": "#FCDCDC", "$type": "color" },
+      "info":       { "$value": "#1A4A6E", "$type": "color" },
+      "info-bg":    { "$value": "#D6EAF8", "$type": "color" }
+    }
+  }
+}

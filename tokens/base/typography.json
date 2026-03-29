@@ -1,0 +1,28 @@
+{
+  "font": {
+    "family": {
+      "sans": { "$value": "Inter, system-ui, -apple-system, sans-serif", "$type": "fontFamily" },
+      "mono": { "$value": "JetBrains Mono, Fira Code, Consolas, monospace", "$type": "fontFamily" }
+    },
+    "weight": {
+      "light":    { "$value": "300", "$type": "fontWeight" },
+      "regular":  { "$value": "400", "$type": "fontWeight" },
+      "medium":   { "$value": "500", "$type": "fontWeight" },
+      "semibold": { "$value": "600", "$type": "fontWeight" },
+      "bold":     { "$value": "700", "$type": "fontWeight" }
+    }
+  },
+  "text": {
+    "caption2":    { "$value": "0.6875rem",  "$type": "dimension" },
+    "caption1":    { "$value": "0.75rem",    "$type": "dimension" },
+    "footnote":    { "$value": "0.8125rem",  "$type": "dimension" },
+    "subhead":     { "$value": "0.9375rem",  "$type": "dimension" },
+    "callout":     { "$value": "1rem",       "$type": "dimension" },
+    "body":        { "$value": "1.0625rem",  "$type": "dimension" },
+    "headline":    { "$value": "1.0625rem",  "$type": "dimension" },
+    "title3":      { "$value": "1.25rem",    "$type": "dimension" },
+    "title2":      { "$value": "1.375rem",   "$type": "dimension" },
+    "title1":      { "$value": "1.75rem",    "$type": "dimension" },
+    "large-title": { "$value": "2.125rem",   "$type": "dimension" }
+  }
+}
