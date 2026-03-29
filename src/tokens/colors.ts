@@ -57,3 +57,62 @@ export const colors = {
 } as const
 
 export type ColorToken = typeof colors
+
+/**
+ * Dark mode colors — Apple HIG inspired.
+ * True black base for OLED. Elevated surfaces step up via iOS system grays.
+ * Accent scale inverted: lighter stops for contrast on dark.
+ */
+export const darkColors = {
+  // Backgrounds — OLED black + iOS system grays
+  background: {
+    base:    '#000000', // true black (OLED)
+    subtle:  '#1C1C1E', // iOS systemGray6 — elevated surface
+    muted:   '#2C2C2E', // iOS systemGray5 — recessed / input bg
+    inverse: '#F5F5F5', // inverse (light) surface
+  },
+
+  // Foreground — Apple dark text hierarchy
+  foreground: {
+    primary:   '#FFFFFF', // pure white primary
+    secondary: '#ADADAD', // iOS secondaryLabel dark
+    tertiary:  '#636366', // iOS tertiaryLabel dark
+    disabled:  '#3A3A3C', // iOS quaternaryLabel dark
+    inverse:   '#000000', // text on light bg
+  },
+
+  // Borders — iOS separator scale dark
+  border: {
+    subtle:  '#38383A', // iOS opaqueSeparator dark
+    default: '#48484A', // iOS separator dark
+    strong:  '#636366', // emphasized border
+  },
+
+  // Accent — shifted 1-2 stops lighter for dark background contrast
+  accent: {
+    50:  '#0D1B26',
+    100: '#1A3347',
+    200: '#264C68',
+    300: '#336589',
+    400: '#4A7BA7',
+    500: '#6793BB', // primary accent on dark (1 stop lighter)
+    600: '#8DAECC',
+    700: '#B3C9DD',
+    800: '#D9E4EE',
+    900: '#F0F4F8',
+  },
+
+  // Semantic — elevated for dark background legibility
+  semantic: {
+    success:   '#52B788',
+    successBg: '#1A3D2B',
+    warning:   '#F4A52B',
+    warningBg: '#3D2E00',
+    error:     '#E57373',
+    errorBg:   '#3D1515',
+    info:      '#64B5F6',
+    infoBg:    '#0D2A3D',
+  },
+} as const
+
+export type DarkColorToken = typeof darkColors

@@ -71,6 +71,31 @@
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
 
+  /* ─── Type Scale (Apple iOS 26 aligned) ───────────── */
+  --text-caption2:     0.6875rem;  /* 11px */
+  --text-caption1:     0.75rem;    /* 12px */
+  --text-footnote:     0.8125rem;  /* 13px */
+  --text-subhead:      0.9375rem;  /* 15px */
+  --text-callout:      1rem;       /* 16px */
+  --text-body:         1.0625rem;  /* 17px */
+  --text-headline:     1.0625rem;  /* 17px, semibold */
+  --text-title3:       1.25rem;    /* 20px */
+  --text-title2:       1.375rem;   /* 22px */
+  --text-title1:       1.75rem;    /* 28px */
+  --text-large-title:  2.125rem;   /* 34px */
+
+  --lh-caption2:     0.8125rem;
+  --lh-caption1:     1rem;
+  --lh-footnote:     1.125rem;
+  --lh-subhead:      1.25rem;
+  --lh-callout:      1.3125rem;
+  --lh-body:         1.375rem;
+  --lh-headline:     1.375rem;
+  --lh-title3:       1.5625rem;
+  --lh-title2:       1.75rem;
+  --lh-title1:       2.125rem;
+  --lh-large-title:  2.5625rem;
+
   /* ─── Spacing ─────────────────────────────────────── */
   --spacing-1:  4px;
   --spacing-2:  8px;
@@ -82,42 +107,65 @@
   --spacing-16: 64px;
   --spacing-24: 96px;
 
-  /* ─── Transitions ─────────────────────────────────── */
+  /* ─── Transitions (legacy aliases) ───────────────── */
   --transition-fast:   100ms ease;
   --transition-base:   150ms ease;
   --transition-slow:   250ms ease;
   --transition-spring: 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ─── Motion: Duration ────────────────────────────── */
+  --duration-instant: 0ms;
+  --duration-fast:    100ms;
+  --duration-normal:  200ms;
+  --duration-slow:    300ms;
+  --duration-glacial: 500ms;
+
+  /* ─── Motion: Easing ──────────────────────────────── */
+  --ease-in:      cubic-bezier(0.4, 0, 1, 1);
+  --ease-out:     cubic-bezier(0, 0, 0.2, 1);
+  --ease-spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-precise: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  /* ─── Z-Index Scale ───────────────────────────────── */
+  --z-base:     0;
+  --z-raised:   1;
+  --z-dropdown: 1000;
+  --z-sticky:   1100;
+  --z-overlay:  1300;
+  --z-modal:    1400;
+  --z-popover:  1500;
+  --z-toast:    1600;
 }
 
 /* ═══ Dark Mode ═══════════════════════════════════════ */
 
 [data-theme="dark"],
 .dark {
-  /* Backgrounds */
-  --color-bg-base:    #111111;
-  --color-bg-subtle:  #1A1A1A;
-  --color-bg-muted:   #222222;
+  /* Backgrounds — OLED black + iOS system grays */
+  --color-bg-base:    #000000; /* true black (OLED) */
+  --color-bg-subtle:  #1C1C1E; /* iOS systemGray6 */
+  --color-bg-muted:   #2C2C2E; /* iOS systemGray5 */
   --color-bg-inverse: #F5F5F5;
 
-  /* Foreground */
-  --color-fg-primary:   #F0F0F0;
-  --color-fg-secondary: #AAAAAA;
-  --color-fg-tertiary:  #666666;
-  --color-fg-disabled:  #444444;
-  --color-fg-inverse:   #1A1A1A;
+  /* Foreground — Apple dark text hierarchy */
+  --color-fg-primary:   #FFFFFF;
+  --color-fg-secondary: #ADADAD; /* iOS secondaryLabel dark */
+  --color-fg-tertiary:  #636366; /* iOS tertiaryLabel dark */
+  --color-fg-disabled:  #3A3A3C; /* iOS quaternaryLabel dark */
+  --color-fg-inverse:   #000000;
 
-  /* Borders */
-  --color-border-subtle:  #2A2A2A;
-  --color-border-default: #333333;
-  --color-border-strong:  #555555;
+  /* Borders — iOS separator scale */
+  --color-border-subtle:  #38383A; /* iOS opaqueSeparator */
+  --color-border-default: #48484A; /* iOS separator */
+  --color-border-strong:  #636366;
 
-  /* Accent stays calibrated */
+  /* Accent — shifted 1-2 stops lighter for dark contrast */
   --color-accent-50:  #0D1B26;
   --color-accent-100: #1A3347;
   --color-accent-200: #264C68;
   --color-accent-300: #336589;
   --color-accent-400: #4A7BA7;
-  --color-accent-500: #6793BB;
+  --color-accent-500: #6793BB; /* primary accent on dark */
   --color-accent-600: #8DAECC;
   --color-accent-700: #B3C9DD;
   --color-accent-800: #D9E4EE;
@@ -133,38 +181,38 @@
   --color-info:       #64B5F6;
   --color-info-bg:    #0D2A3D;
 
-  /* Shadows — darker environment needs less shadow */
+  /* Shadows — darker environment, higher opacity */
   --shadow-xs:     0 1px 2px 0 rgba(0, 0, 0, 0.20);
   --shadow-sm:     0 1px 3px 0 rgba(0, 0, 0, 0.30), 0 1px 2px -1px rgba(0, 0, 0, 0.20);
   --shadow-md:     0 4px 6px -1px rgba(0, 0, 0, 0.30), 0 2px 4px -2px rgba(0, 0, 0, 0.20);
   --shadow-lg:     0 10px 15px -3px rgba(0, 0, 0, 0.30), 0 4px 6px -4px rgba(0, 0, 0, 0.20);
   --shadow-xl:     0 20px 25px -5px rgba(0, 0, 0, 0.40), 0 8px 10px -6px rgba(0, 0, 0, 0.30);
   --shadow-lifted: 0 8px 24px -4px rgba(0, 0, 0, 0.50), 0 4px 8px -4px rgba(0, 0, 0, 0.30);
-  --shadow-focus:  0 0 0 3px rgba(74, 123, 167, 0.40);
+  --shadow-focus:  0 0 0 3px rgba(103, 147, 187, 0.40); /* accent-500 dark */
   --shadow-inner:  inset 0 1px 2px 0 rgba(0, 0, 0, 0.30);
 }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    /* Backgrounds */
-    --color-bg-base:    #111111;
-    --color-bg-subtle:  #1A1A1A;
-    --color-bg-muted:   #222222;
+    /* Backgrounds — OLED black + iOS system grays */
+    --color-bg-base:    #000000;
+    --color-bg-subtle:  #1C1C1E;
+    --color-bg-muted:   #2C2C2E;
     --color-bg-inverse: #F5F5F5;
 
-    /* Foreground */
-    --color-fg-primary:   #F0F0F0;
-    --color-fg-secondary: #AAAAAA;
-    --color-fg-tertiary:  #666666;
-    --color-fg-disabled:  #444444;
-    --color-fg-inverse:   #1A1A1A;
+    /* Foreground — Apple dark text hierarchy */
+    --color-fg-primary:   #FFFFFF;
+    --color-fg-secondary: #ADADAD;
+    --color-fg-tertiary:  #636366;
+    --color-fg-disabled:  #3A3A3C;
+    --color-fg-inverse:   #000000;
 
-    /* Borders */
-    --color-border-subtle:  #2A2A2A;
-    --color-border-default: #333333;
-    --color-border-strong:  #555555;
+    /* Borders — iOS separator scale */
+    --color-border-subtle:  #38383A;
+    --color-border-default: #48484A;
+    --color-border-strong:  #636366;
 
-    /* Accent */
+    /* Accent — shifted 1-2 stops lighter */
     --color-accent-50:  #0D1B26;
     --color-accent-100: #1A3347;
     --color-accent-200: #264C68;
@@ -193,7 +241,7 @@
     --shadow-lg:     0 10px 15px -3px rgba(0, 0, 0, 0.30), 0 4px 6px -4px rgba(0, 0, 0, 0.20);
     --shadow-xl:     0 20px 25px -5px rgba(0, 0, 0, 0.40), 0 8px 10px -6px rgba(0, 0, 0, 0.30);
     --shadow-lifted: 0 8px 24px -4px rgba(0, 0, 0, 0.50), 0 4px 8px -4px rgba(0, 0, 0, 0.30);
-    --shadow-focus:  0 0 0 3px rgba(74, 123, 167, 0.40);
+    --shadow-focus:  0 0 0 3px rgba(103, 147, 187, 0.40);
     --shadow-inner:  inset 0 1px 2px 0 rgba(0, 0, 0, 0.30);
   }
 }

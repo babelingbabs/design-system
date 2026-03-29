@@ -97,37 +97,48 @@ function TokensPage() {
         </div>
       </section>
 
-      {/* Typography */}
+      {/* Typography — Apple iOS 26 Type Scale */}
       <section>
-        <SectionTitle>02 — Typography Scale</SectionTitle>
+        <SectionTitle>02 — Typography Scale (Apple iOS 26)</SectionTitle>
         <div className="space-y-4">
           {[
-            { label: 'H1 / 3rem / Bold',     cls: 'text-5xl font-bold tracking-tight', text: 'The quick brown fox' },
-            { label: 'H2 / 2.25rem / Semibold', cls: 'text-4xl font-semibold tracking-tight', text: 'The quick brown fox' },
-            { label: 'H3 / 1.875rem / Semibold', cls: 'text-3xl font-semibold', text: 'The quick brown fox' },
-            { label: 'H4 / 1.5rem / Medium', cls: 'text-2xl font-medium', text: 'The quick brown fox' },
-            { label: 'H5 / 1.25rem / Medium', cls: 'text-xl font-medium', text: 'The quick brown fox' },
-            { label: 'H6 / 1.125rem / Medium', cls: 'text-lg font-medium', text: 'The quick brown fox' },
-            { label: 'Body Large / 1.125rem', cls: 'text-lg font-normal', text: 'The quick brown fox jumps over the lazy dog' },
-            { label: 'Body / 1rem', cls: 'text-base font-normal', text: 'The quick brown fox jumps over the lazy dog' },
-            { label: 'Body Small / 0.875rem', cls: 'text-sm font-normal', text: 'The quick brown fox jumps over the lazy dog' },
-            { label: 'Caption / 0.75rem', cls: 'text-xs font-normal', text: 'The quick brown fox jumps over the lazy dog' },
-          ].map(({ label, cls, text }) => (
+            { label: 'Large Title / 34px / 400',  size: '2.125rem',  weight: '400', lh: '2.5625rem', ls: '0.40px',  text: 'The quick brown fox' },
+            { label: 'Large Title / 34px / 700',  size: '2.125rem',  weight: '700', lh: '2.5625rem', ls: '0.40px',  text: 'The quick brown fox' },
+            { label: 'Title 1 / 28px / 400',      size: '1.75rem',   weight: '400', lh: '2.125rem',  ls: '0.38px',  text: 'The quick brown fox' },
+            { label: 'Title 2 / 22px / 400',      size: '1.375rem',  weight: '400', lh: '1.75rem',   ls: '-0.26px', text: 'The quick brown fox' },
+            { label: 'Title 3 / 20px / 400',      size: '1.25rem',   weight: '400', lh: '1.5625rem', ls: '-0.45px', text: 'The quick brown fox' },
+            { label: 'Headline / 17px / 600',      size: '1.0625rem', weight: '600', lh: '1.375rem',  ls: '-0.43px', text: 'The quick brown fox' },
+            { label: 'Body / 17px / 400',          size: '1.0625rem', weight: '400', lh: '1.375rem',  ls: '-0.43px', text: 'The quick brown fox jumps over the lazy dog' },
+            { label: 'Callout / 16px / 400',       size: '1rem',      weight: '400', lh: '1.3125rem', ls: '-0.31px', text: 'The quick brown fox jumps over the lazy dog' },
+            { label: 'Subhead / 15px / 400',       size: '0.9375rem', weight: '400', lh: '1.25rem',   ls: '-0.23px', text: 'The quick brown fox jumps over the lazy dog' },
+            { label: 'Footnote / 13px / 400',      size: '0.8125rem', weight: '400', lh: '1.125rem',  ls: '-0.08px', text: 'The quick brown fox jumps over the lazy dog' },
+            { label: 'Caption 1 / 12px / 400',     size: '0.75rem',   weight: '400', lh: '1rem',      ls: '0px',     text: 'The quick brown fox jumps over the lazy dog' },
+            { label: 'Caption 2 / 11px / 400',     size: '0.6875rem', weight: '400', lh: '0.8125rem', ls: '0.06px',  text: 'The quick brown fox jumps over the lazy dog' },
+          ].map(({ label, size, weight, lh, ls, text }) => (
             <div key={label} className="flex items-baseline gap-6 py-3 border-b border-[var(--color-border-subtle)]">
               <span
-                className="text-[10px] text-[var(--color-fg-tertiary)] w-52 shrink-0"
+                className="text-[10px] text-[var(--color-fg-tertiary)] w-56 shrink-0"
                 style={{ fontFamily: 'var(--font-mono)', letterSpacing: '0.04em' }}
               >
                 {label}
               </span>
-              <span className={`${cls} text-[var(--color-fg-primary)]`} style={{ fontFamily: 'var(--font-sans)' }}>
+              <span
+                className="text-[var(--color-fg-primary)]"
+                style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: size,
+                  fontWeight: weight,
+                  lineHeight: lh,
+                  letterSpacing: ls,
+                }}
+              >
                 {text}
               </span>
             </div>
           ))}
           <div className="flex items-baseline gap-6 py-3 border-b border-[var(--color-border-subtle)]">
             <span
-              className="text-[10px] text-[var(--color-fg-tertiary)] w-52 shrink-0"
+              className="text-[10px] text-[var(--color-fg-tertiary)] w-56 shrink-0"
               style={{ fontFamily: 'var(--font-mono)', letterSpacing: '0.04em' }}
             >
               Mono / JetBrains Mono

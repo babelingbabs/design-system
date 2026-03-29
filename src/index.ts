@@ -10,6 +10,7 @@ export * from './components/Button'
 export * from './components/Card'
 export * from './components/Input'
 export * from './components/Grid'
+export * from './components/ThemeProvider'
 
 // ─── CSS (consumers must import this) ─────────────────
 // import '@kingsley/design-system/dist/style.css'
