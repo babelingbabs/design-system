@@ -4,6 +4,9 @@ export * from './tokens'
 // ─── Animations ───────────────────────────────────────
 export * from './animations'
 
+// ─── Icons ────────────────────────────────────────────
+export * from './components/Icon'
+
 // ─── Components ───────────────────────────────────────
 export * from './components/Typography'
 export * from './components/Button'
