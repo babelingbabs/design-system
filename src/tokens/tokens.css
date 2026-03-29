@@ -49,6 +49,28 @@
   --color-info:       #1A4A6E;
   --color-info-bg:    #D6EAF8;
 
+  /* ─── Colors: Apple System Colors ────────────────── */
+  --color-system-red:    #FF3B30;
+  --color-system-orange: #FF9500;
+  --color-system-yellow: #FFCC00;
+  --color-system-green:  #34C759;
+  --color-system-mint:   #00C7BE;
+  --color-system-teal:   #30B0C7;
+  --color-system-cyan:   #32ADE6;
+  --color-system-blue:   #007AFF;
+  --color-system-indigo: #5856D6;
+  --color-system-purple: #AF52DE;
+  --color-system-pink:   #FF2D55;
+  --color-system-brown:  #A2845E;
+
+  /* ─── Colors: Apple System Grays ──────────────────── */
+  --color-system-gray-1: #8E8E93;
+  --color-system-gray-2: #AEAEB2;
+  --color-system-gray-3: #C7C7CC;
+  --color-system-gray-4: #D1D1D6;
+  --color-system-gray-5: #E5E5EA;
+  --color-system-gray-6: #F2F2F7;
+
   /* ─── Shadows ─────────────────────────────────────── */
   --shadow-xs:     0 1px 2px 0 rgba(0, 0, 0, 0.04);
   --shadow-sm:     0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
@@ -181,6 +203,28 @@
   --color-info:       #64B5F6;
   --color-info-bg:    #0D2A3D;
 
+  /* Apple System Colors — dark variants */
+  --color-system-red:    #FF453A;
+  --color-system-orange: #FF9F0A;
+  --color-system-yellow: #FFD60A;
+  --color-system-green:  #30D158;
+  --color-system-mint:   #63E6E2;
+  --color-system-teal:   #40CBE0;
+  --color-system-cyan:   #64D2FF;
+  --color-system-blue:   #0A84FF;
+  --color-system-indigo: #5E5CE6;
+  --color-system-purple: #BF5AF2;
+  --color-system-pink:   #FF375F;
+  --color-system-brown:  #AC8E68;
+
+  /* Apple System Grays — dark variants */
+  --color-system-gray-1: #8E8E93;
+  --color-system-gray-2: #636366;
+  --color-system-gray-3: #48484A;
+  --color-system-gray-4: #3A3A3C;
+  --color-system-gray-5: #2C2C2E;
+  --color-system-gray-6: #1C1C1E;
+
   /* Shadows — darker environment, higher opacity */
   --shadow-xs:     0 1px 2px 0 rgba(0, 0, 0, 0.20);
   --shadow-sm:     0 1px 3px 0 rgba(0, 0, 0, 0.30), 0 1px 2px -1px rgba(0, 0, 0, 0.20);
@@ -233,6 +277,28 @@
     --color-error-bg:   #3D1515;
     --color-info:       #64B5F6;
     --color-info-bg:    #0D2A3D;
+
+    /* Apple System Colors — dark variants */
+    --color-system-red:    #FF453A;
+    --color-system-orange: #FF9F0A;
+    --color-system-yellow: #FFD60A;
+    --color-system-green:  #30D158;
+    --color-system-mint:   #63E6E2;
+    --color-system-teal:   #40CBE0;
+    --color-system-cyan:   #64D2FF;
+    --color-system-blue:   #0A84FF;
+    --color-system-indigo: #5E5CE6;
+    --color-system-purple: #BF5AF2;
+    --color-system-pink:   #FF375F;
+    --color-system-brown:  #AC8E68;
+
+    /* Apple System Grays — dark variants */
+    --color-system-gray-1: #8E8E93;
+    --color-system-gray-2: #636366;
+    --color-system-gray-3: #48484A;
+    --color-system-gray-4: #3A3A3C;
+    --color-system-gray-5: #2C2C2E;
+    --color-system-gray-6: #1C1C1E;
 
     /* Shadows */
     --shadow-xs:     0 1px 2px 0 rgba(0, 0, 0, 0.20);

@@ -11,6 +11,9 @@ export * from './components/Card'
 export * from './components/Input'
 export * from './components/Grid'
 export * from './components/ThemeProvider'
+export * from './components/Badge'
+export * from './components/Toggle'
+export * from './components/Tabs'
 
 // ─── CSS (consumers must import this) ─────────────────
 // import '@kingsley/design-system/dist/style.css'
