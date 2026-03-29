@@ -13,7 +13,7 @@ export const shadows = {
   // Lifted state for interactive cards
   lifted: '0 8px 24px -4px rgba(0, 0, 0, 0.10), 0 4px 8px -4px rgba(0, 0, 0, 0.06)',
   // Focus ring
-  focus: '0 0 0 3px rgba(74, 123, 167, 0.25)',
+  focus: '0 0 0 3px rgba(0, 122, 255, 0.25)',
   // Inner shadow for inputs
   inner: 'inset 0 1px 2px 0 rgba(0, 0, 0, 0.05)',
 } as const

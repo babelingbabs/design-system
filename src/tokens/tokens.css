@@ -27,17 +27,17 @@
   --color-border-default: #D4D4D4;
   --color-border-strong:  #AAAAAA;
 
-  /* ─── Colors: Accent (Muted Architectural Blue) ────── */
-  --color-accent-50:  #F0F4F8;
-  --color-accent-100: #D9E4EE;
-  --color-accent-200: #B3C9DD;
-  --color-accent-300: #8DAECC;
-  --color-accent-400: #6793BB;
-  --color-accent-500: #4A7BA7;
-  --color-accent-600: #3B6286;
-  --color-accent-700: #2C4A65;
-  --color-accent-800: #1E3144;
-  --color-accent-900: #0F1922;
+  /* ─── Colors: Accent (Apple Blue #007AFF) ───────────── */
+  --color-accent-50:  #EBF5FF;
+  --color-accent-100: #CCE4FF;
+  --color-accent-200: #99C9FF;
+  --color-accent-300: #66AEFF;
+  --color-accent-400: #3393FF;
+  --color-accent-500: #007AFF;
+  --color-accent-600: #0062CC;
+  --color-accent-700: #004A99;
+  --color-accent-800: #003166;
+  --color-accent-900: #001933;
 
   /* ─── Colors: Semantic ────────────────────────────── */
   --color-success:    #2D6A4F;
@@ -78,7 +78,7 @@
   --shadow-lg:     0 10px 15px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
   --shadow-xl:     0 20px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
   --shadow-lifted: 0 8px 24px -4px rgba(0, 0, 0, 0.10), 0 4px 8px -4px rgba(0, 0, 0, 0.06);
-  --shadow-focus:  0 0 0 3px rgba(74, 123, 167, 0.25);
+  --shadow-focus:  0 0 0 3px rgba(0, 122, 255, 0.25);
   --shadow-inner:  inset 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 
   /* ─── Border Radius ───────────────────────────────── */
@@ -181,17 +181,17 @@
   --color-border-default: #48484A; /* iOS separator */
   --color-border-strong:  #636366;
 
-  /* Accent — shifted 1-2 stops lighter for dark contrast */
-  --color-accent-50:  #0D1B26;
-  --color-accent-100: #1A3347;
-  --color-accent-200: #264C68;
-  --color-accent-300: #336589;
-  --color-accent-400: #4A7BA7;
-  --color-accent-500: #6793BB; /* primary accent on dark */
-  --color-accent-600: #8DAECC;
-  --color-accent-700: #B3C9DD;
-  --color-accent-800: #D9E4EE;
-  --color-accent-900: #F0F4F8;
+  /* Accent — Apple Blue dark (#0A84FF), shifted lighter */
+  --color-accent-50:  #001A33;
+  --color-accent-100: #002B57;
+  --color-accent-200: #004C99;
+  --color-accent-300: #006DDC;
+  --color-accent-400: #0A84FF;
+  --color-accent-500: #0A84FF; /* Apple Blue dark */
+  --color-accent-600: #3D9EFF;
+  --color-accent-700: #70B8FF;
+  --color-accent-800: #A3D1FF;
+  --color-accent-900: #D6EBFF;
 
   /* Semantic */
   --color-success:    #52B788;
@@ -232,7 +232,7 @@
   --shadow-lg:     0 10px 15px -3px rgba(0, 0, 0, 0.30), 0 4px 6px -4px rgba(0, 0, 0, 0.20);
   --shadow-xl:     0 20px 25px -5px rgba(0, 0, 0, 0.40), 0 8px 10px -6px rgba(0, 0, 0, 0.30);
   --shadow-lifted: 0 8px 24px -4px rgba(0, 0, 0, 0.50), 0 4px 8px -4px rgba(0, 0, 0, 0.30);
-  --shadow-focus:  0 0 0 3px rgba(103, 147, 187, 0.40); /* accent-500 dark */
+  --shadow-focus:  0 0 0 3px rgba(10, 132, 255, 0.40); /* Apple Blue dark */
   --shadow-inner:  inset 0 1px 2px 0 rgba(0, 0, 0, 0.30);
 }
 
@@ -256,17 +256,17 @@
     --color-border-default: #48484A;
     --color-border-strong:  #636366;
 
-    /* Accent — shifted 1-2 stops lighter */
-    --color-accent-50:  #0D1B26;
-    --color-accent-100: #1A3347;
-    --color-accent-200: #264C68;
-    --color-accent-300: #336589;
-    --color-accent-400: #4A7BA7;
-    --color-accent-500: #6793BB;
-    --color-accent-600: #8DAECC;
-    --color-accent-700: #B3C9DD;
-    --color-accent-800: #D9E4EE;
-    --color-accent-900: #F0F4F8;
+    /* Accent — Apple Blue dark (#0A84FF), shifted lighter */
+    --color-accent-50:  #001A33;
+    --color-accent-100: #002B57;
+    --color-accent-200: #004C99;
+    --color-accent-300: #006DDC;
+    --color-accent-400: #0A84FF;
+    --color-accent-500: #0A84FF;
+    --color-accent-600: #3D9EFF;
+    --color-accent-700: #70B8FF;
+    --color-accent-800: #A3D1FF;
+    --color-accent-900: #D6EBFF;
 
     /* Semantic */
     --color-success:    #52B788;
@@ -307,7 +307,7 @@
     --shadow-lg:     0 10px 15px -3px rgba(0, 0, 0, 0.30), 0 4px 6px -4px rgba(0, 0, 0, 0.20);
     --shadow-xl:     0 20px 25px -5px rgba(0, 0, 0, 0.40), 0 8px 10px -6px rgba(0, 0, 0, 0.30);
     --shadow-lifted: 0 8px 24px -4px rgba(0, 0, 0, 0.50), 0 4px 8px -4px rgba(0, 0, 0, 0.30);
-    --shadow-focus:  0 0 0 3px rgba(103, 147, 187, 0.40);
+    --shadow-focus:  0 0 0 3px rgba(10, 132, 255, 0.40);
     --shadow-inner:  inset 0 1px 2px 0 rgba(0, 0, 0, 0.30);
   }
 }

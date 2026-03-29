@@ -29,18 +29,18 @@ export const colors = {
     strong: '#AAAAAA',    // emphasized border
   },
 
-  // Accent — muted architectural blue-gray
+  // Accent — Apple Blue (#007AFF) as primary CTA
   accent: {
-    50:  '#F0F4F8',
-    100: '#D9E4EE',
-    200: '#B3C9DD',
-    300: '#8DAECC',
-    400: '#6793BB',
-    500: '#4A7BA7', // primary accent
-    600: '#3B6286',
-    700: '#2C4A65',
-    800: '#1E3144',
-    900: '#0F1922',
+    50:  '#EBF5FF',
+    100: '#CCE4FF',
+    200: '#99C9FF',
+    300: '#66AEFF',
+    400: '#3393FF',
+    500: '#007AFF', // Apple Blue — primary CTA
+    600: '#0062CC',
+    700: '#004A99',
+    800: '#003166',
+    900: '#001933',
   },
 
   // Semantic
@@ -88,18 +88,18 @@ export const darkColors = {
     strong:  '#636366', // emphasized border
   },
 
-  // Accent — shifted 1-2 stops lighter for dark background contrast
+  // Accent — Apple Blue dark variant (#0A84FF), scale shifted lighter
   accent: {
-    50:  '#0D1B26',
-    100: '#1A3347',
-    200: '#264C68',
-    300: '#336589',
-    400: '#4A7BA7',
-    500: '#6793BB', // primary accent on dark (1 stop lighter)
-    600: '#8DAECC',
-    700: '#B3C9DD',
-    800: '#D9E4EE',
-    900: '#F0F4F8',
+    50:  '#001A33',
+    100: '#002B57',
+    200: '#004C99',
+    300: '#006DDC',
+    400: '#0A84FF', // Apple Blue dark — brighter for contrast
+    500: '#0A84FF', // primary accent on dark
+    600: '#3D9EFF',
+    700: '#70B8FF',
+    800: '#A3D1FF',
+    900: '#D6EBFF',
   },
 
   // Semantic — elevated for dark background legibility

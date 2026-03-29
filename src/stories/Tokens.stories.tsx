@@ -66,19 +66,19 @@ function TokensPage() {
           </div>
 
           <div>
-            <p className="text-xs text-[var(--color-fg-tertiary)] mb-3" style={{ fontFamily: 'var(--font-mono)' }}>Accent — Muted Architectural Blue</p>
+            <p className="text-xs text-[var(--color-fg-tertiary)] mb-3" style={{ fontFamily: 'var(--font-mono)' }}>Accent — Apple Blue</p>
             <div className="grid grid-cols-5 gap-4">
               {[
-                ['50',  '#F0F4F8'],
-                ['100', '#D9E4EE'],
-                ['200', '#B3C9DD'],
-                ['300', '#8DAECC'],
-                ['400', '#6793BB'],
-                ['500', '#4A7BA7'],
-                ['600', '#3B6286'],
-                ['700', '#2C4A65'],
-                ['800', '#1E3144'],
-                ['900', '#0F1922'],
+                ['50',  '#EBF5FF'],
+                ['100', '#CCE4FF'],
+                ['200', '#99C9FF'],
+                ['300', '#66AEFF'],
+                ['400', '#3393FF'],
+                ['500', '#007AFF'],
+                ['600', '#0062CC'],
+                ['700', '#004A99'],
+                ['800', '#003166'],
+                ['900', '#001933'],
               ].map(([step, hex]) => (
                 <ColorSwatch key={step} name={`accent.${step}`} value={hex} />
               ))}
