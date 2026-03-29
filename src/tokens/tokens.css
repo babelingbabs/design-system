@@ -1,0 +1,199 @@
+/**
+ * Design Token CSS Variables
+ * Light mode by default. Dark mode via [data-theme="dark"] or prefers-color-scheme.
+ *
+ * Architecture: Swiss design meets technical blueprints.
+ * Warm but precise. Barely-there depth.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ─── Colors: Backgrounds ─────────────────────────── */
+  --color-bg-base:     #FAFAFA;
+  --color-bg-subtle:   #F5F5F5;
+  --color-bg-muted:    #EFEFEF;
+  --color-bg-inverse:  #1A1A1A;
+
+  /* ─── Colors: Foreground / Text ───────────────────── */
+  --color-fg-primary:   #1A1A1A;
+  --color-fg-secondary: #555555;
+  --color-fg-tertiary:  #8A8A8A;
+  --color-fg-disabled:  #BBBBBB;
+  --color-fg-inverse:   #FAFAFA;
+
+  /* ─── Colors: Borders ─────────────────────────────── */
+  --color-border-subtle:  #E8E8E8;
+  --color-border-default: #D4D4D4;
+  --color-border-strong:  #AAAAAA;
+
+  /* ─── Colors: Accent (Muted Architectural Blue) ────── */
+  --color-accent-50:  #F0F4F8;
+  --color-accent-100: #D9E4EE;
+  --color-accent-200: #B3C9DD;
+  --color-accent-300: #8DAECC;
+  --color-accent-400: #6793BB;
+  --color-accent-500: #4A7BA7;
+  --color-accent-600: #3B6286;
+  --color-accent-700: #2C4A65;
+  --color-accent-800: #1E3144;
+  --color-accent-900: #0F1922;
+
+  /* ─── Colors: Semantic ────────────────────────────── */
+  --color-success:    #2D6A4F;
+  --color-success-bg: #D8F3DC;
+  --color-warning:    #7B5800;
+  --color-warning-bg: #FFF3CD;
+  --color-error:      #9B1D20;
+  --color-error-bg:   #FCDCDC;
+  --color-info:       #1A4A6E;
+  --color-info-bg:    #D6EAF8;
+
+  /* ─── Shadows ─────────────────────────────────────── */
+  --shadow-xs:     0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --shadow-sm:     0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+  --shadow-md:     0 4px 6px -1px rgba(0, 0, 0, 0.06), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
+  --shadow-lg:     0 10px 15px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --shadow-xl:     0 20px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --shadow-lifted: 0 8px 24px -4px rgba(0, 0, 0, 0.10), 0 4px 8px -4px rgba(0, 0, 0, 0.06);
+  --shadow-focus:  0 0 0 3px rgba(74, 123, 167, 0.25);
+  --shadow-inner:  inset 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+  /* ─── Border Radius ───────────────────────────────── */
+  --radius-xs:   2px;
+  --radius-sm:   4px;
+  --radius-md:   6px;
+  --radius-lg:   8px;
+  --radius-xl:   12px;
+  --radius-full: 9999px;
+
+  /* ─── Typography ──────────────────────────────────── */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+
+  /* ─── Spacing ─────────────────────────────────────── */
+  --spacing-1:  4px;
+  --spacing-2:  8px;
+  --spacing-3:  12px;
+  --spacing-4:  16px;
+  --spacing-6:  24px;
+  --spacing-8:  32px;
+  --spacing-12: 48px;
+  --spacing-16: 64px;
+  --spacing-24: 96px;
+
+  /* ─── Transitions ─────────────────────────────────── */
+  --transition-fast:   100ms ease;
+  --transition-base:   150ms ease;
+  --transition-slow:   250ms ease;
+  --transition-spring: 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ═══ Dark Mode ═══════════════════════════════════════ */
+
+[data-theme="dark"],
+.dark {
+  /* Backgrounds */
+  --color-bg-base:    #111111;
+  --color-bg-subtle:  #1A1A1A;
+  --color-bg-muted:   #222222;
+  --color-bg-inverse: #F5F5F5;
+
+  /* Foreground */
+  --color-fg-primary:   #F0F0F0;
+  --color-fg-secondary: #AAAAAA;
+  --color-fg-tertiary:  #666666;
+  --color-fg-disabled:  #444444;
+  --color-fg-inverse:   #1A1A1A;
+
+  /* Borders */
+  --color-border-subtle:  #2A2A2A;
+  --color-border-default: #333333;
+  --color-border-strong:  #555555;
+
+  /* Accent stays calibrated */
+  --color-accent-50:  #0D1B26;
+  --color-accent-100: #1A3347;
+  --color-accent-200: #264C68;
+  --color-accent-300: #336589;
+  --color-accent-400: #4A7BA7;
+  --color-accent-500: #6793BB;
+  --color-accent-600: #8DAECC;
+  --color-accent-700: #B3C9DD;
+  --color-accent-800: #D9E4EE;
+  --color-accent-900: #F0F4F8;
+
+  /* Semantic */
+  --color-success:    #52B788;
+  --color-success-bg: #1A3D2B;
+  --color-warning:    #F4A52B;
+  --color-warning-bg: #3D2E00;
+  --color-error:      #E57373;
+  --color-error-bg:   #3D1515;
+  --color-info:       #64B5F6;
+  --color-info-bg:    #0D2A3D;
+
+  /* Shadows — darker environment needs less shadow */
+  --shadow-xs:     0 1px 2px 0 rgba(0, 0, 0, 0.20);
+  --shadow-sm:     0 1px 3px 0 rgba(0, 0, 0, 0.30), 0 1px 2px -1px rgba(0, 0, 0, 0.20);
+  --shadow-md:     0 4px 6px -1px rgba(0, 0, 0, 0.30), 0 2px 4px -2px rgba(0, 0, 0, 0.20);
+  --shadow-lg:     0 10px 15px -3px rgba(0, 0, 0, 0.30), 0 4px 6px -4px rgba(0, 0, 0, 0.20);
+  --shadow-xl:     0 20px 25px -5px rgba(0, 0, 0, 0.40), 0 8px 10px -6px rgba(0, 0, 0, 0.30);
+  --shadow-lifted: 0 8px 24px -4px rgba(0, 0, 0, 0.50), 0 4px 8px -4px rgba(0, 0, 0, 0.30);
+  --shadow-focus:  0 0 0 3px rgba(74, 123, 167, 0.40);
+  --shadow-inner:  inset 0 1px 2px 0 rgba(0, 0, 0, 0.30);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    /* Backgrounds */
+    --color-bg-base:    #111111;
+    --color-bg-subtle:  #1A1A1A;
+    --color-bg-muted:   #222222;
+    --color-bg-inverse: #F5F5F5;
+
+    /* Foreground */
+    --color-fg-primary:   #F0F0F0;
+    --color-fg-secondary: #AAAAAA;
+    --color-fg-tertiary:  #666666;
+    --color-fg-disabled:  #444444;
+    --color-fg-inverse:   #1A1A1A;
+
+    /* Borders */
+    --color-border-subtle:  #2A2A2A;
+    --color-border-default: #333333;
+    --color-border-strong:  #555555;
+
+    /* Accent */
+    --color-accent-50:  #0D1B26;
+    --color-accent-100: #1A3347;
+    --color-accent-200: #264C68;
+    --color-accent-300: #336589;
+    --color-accent-400: #4A7BA7;
+    --color-accent-500: #6793BB;
+    --color-accent-600: #8DAECC;
+    --color-accent-700: #B3C9DD;
+    --color-accent-800: #D9E4EE;
+    --color-accent-900: #F0F4F8;
+
+    /* Semantic */
+    --color-success:    #52B788;
+    --color-success-bg: #1A3D2B;
+    --color-warning:    #F4A52B;
+    --color-warning-bg: #3D2E00;
+    --color-error:      #E57373;
+    --color-error-bg:   #3D1515;
+    --color-info:       #64B5F6;
+    --color-info-bg:    #0D2A3D;
+
+    /* Shadows */
+    --shadow-xs:     0 1px 2px 0 rgba(0, 0, 0, 0.20);
+    --shadow-sm:     0 1px 3px 0 rgba(0, 0, 0, 0.30), 0 1px 2px -1px rgba(0, 0, 0, 0.20);
+    --shadow-md:     0 4px 6px -1px rgba(0, 0, 0, 0.30), 0 2px 4px -2px rgba(0, 0, 0, 0.20);
+    --shadow-lg:     0 10px 15px -3px rgba(0, 0, 0, 0.30), 0 4px 6px -4px rgba(0, 0, 0, 0.20);
+    --shadow-xl:     0 20px 25px -5px rgba(0, 0, 0, 0.40), 0 8px 10px -6px rgba(0, 0, 0, 0.30);
+    --shadow-lifted: 0 8px 24px -4px rgba(0, 0, 0, 0.50), 0 4px 8px -4px rgba(0, 0, 0, 0.30);
+    --shadow-focus:  0 0 0 3px rgba(74, 123, 167, 0.40);
+    --shadow-inner:  inset 0 1px 2px 0 rgba(0, 0, 0, 0.30);
+  }
+}

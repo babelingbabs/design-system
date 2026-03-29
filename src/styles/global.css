@@ -1,0 +1,92 @@
+@import "../tokens/tokens.css";
+@import "tailwindcss";
+
+/* ─── Tailwind v4 CSS-first config ────────────────── */
+@theme {
+  /* Map CSS variables to Tailwind theme */
+
+  /* Colors */
+  --color-bg-base:    var(--color-bg-base);
+  --color-bg-subtle:  var(--color-bg-subtle);
+  --color-bg-muted:   var(--color-bg-muted);
+  --color-bg-inverse: var(--color-bg-inverse);
+
+  --color-fg-primary:   var(--color-fg-primary);
+  --color-fg-secondary: var(--color-fg-secondary);
+  --color-fg-tertiary:  var(--color-fg-tertiary);
+  --color-fg-disabled:  var(--color-fg-disabled);
+  --color-fg-inverse:   var(--color-fg-inverse);
+
+  --color-border-subtle:  var(--color-border-subtle);
+  --color-border-default: var(--color-border-default);
+  --color-border-strong:  var(--color-border-strong);
+
+  --color-accent-50:  var(--color-accent-50);
+  --color-accent-100: var(--color-accent-100);
+  --color-accent-200: var(--color-accent-200);
+  --color-accent-300: var(--color-accent-300);
+  --color-accent-400: var(--color-accent-400);
+  --color-accent-500: var(--color-accent-500);
+  --color-accent-600: var(--color-accent-600);
+  --color-accent-700: var(--color-accent-700);
+  --color-accent-800: var(--color-accent-800);
+  --color-accent-900: var(--color-accent-900);
+
+  --color-success:    var(--color-success);
+  --color-success-bg: var(--color-success-bg);
+  --color-warning:    var(--color-warning);
+  --color-warning-bg: var(--color-warning-bg);
+  --color-error:      var(--color-error);
+  --color-error-bg:   var(--color-error-bg);
+
+  /* Typography */
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+
+  /* Border radius */
+  --radius-xs:   var(--radius-xs);
+  --radius-sm:   var(--radius-sm);
+  --radius-md:   var(--radius-md);
+  --radius-lg:   var(--radius-lg);
+  --radius-xl:   var(--radius-xl);
+  --radius-full: var(--radius-full);
+
+  /* Shadows */
+  --shadow-xs:     var(--shadow-xs);
+  --shadow-sm:     var(--shadow-sm);
+  --shadow-md:     var(--shadow-md);
+  --shadow-lg:     var(--shadow-lg);
+  --shadow-lifted: var(--shadow-lifted);
+  --shadow-focus:  var(--shadow-focus);
+}
+
+/* ─── Base Styles ──────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--color-bg-base);
+  color: var(--color-fg-primary);
+  line-height: 1.625;
+}
+
+/* ─── Focus Styles ─────────────────────────────────── */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+/* ─── Selection ────────────────────────────────────── */
+::selection {
+  background: var(--color-accent-200);
+  color: var(--color-accent-900);
+}

@@ -1,0 +1,25 @@
+import{j as s}from"./jsx-runtime-DFAAy_2V.js";import{R as f}from"./index-Bc2G9s8g.js";const y={h1:"text-5xl font-bold tracking-tight text-[var(--color-fg-primary)] leading-[1.1]",h2:"text-4xl font-semibold tracking-tight text-[var(--color-fg-primary)] leading-[1.15]",h3:"text-3xl font-semibold tracking-snug text-[var(--color-fg-primary)] leading-[1.2]",h4:"text-2xl font-medium tracking-normal text-[var(--color-fg-primary)] leading-[1.3]",h5:"text-xl font-medium tracking-normal text-[var(--color-fg-primary)] leading-[1.4]",h6:"text-lg font-medium tracking-normal text-[var(--color-fg-primary)] leading-[1.5]"};function o(e){const a=({children:t,className:r=""})=>f.createElement(e,{className:`${y[e]} ${r}`.trim()},t);return a.displayName=`Typography.${e.toUpperCase()}`,a}const h=o("h1"),v=o("h2"),N=o("h3"),T=o("h4"),R=o("h5"),b=o("h6");function n({children:e,size:a="base",secondary:t=!1,muted:r=!1,className:l=""}){const p={lg:"text-lg",base:"text-base",sm:"text-sm",xs:"text-xs"}[a],u=r?"text-[var(--color-fg-tertiary)]":t?"text-[var(--color-fg-secondary)]":"text-[var(--color-fg-primary)]";return s.jsx("p",{className:`${p} ${u} leading-relaxed ${l}`.trim(),children:e})}n.displayName="Typography.Text";function i({children:e,muted:a=!0,className:t=""}){return s.jsx("span",{className:`
+        text-xs
+        ${a?"text-[var(--color-fg-tertiary)]":"text-[var(--color-fg-secondary)]"}
+        leading-normal
+        ${t}
+      `.trim(),children:e})}i.displayName="Typography.Caption";function d({children:e,size:a="sm",accent:t=!1,className:r=""}){const l={sm:"text-sm",xs:"text-xs","2xs":"text-[0.625rem]"}[a];return s.jsx("span",{className:`
+        font-mono
+        ${l}
+        tracking-wide
+        ${t?"text-[var(--color-accent-500)]":"text-[var(--color-fg-secondary)]"}
+        ${r}
+      `.trim(),style:{fontFamily:"var(--font-mono)"},children:e})}d.displayName="Typography.Mono";function c({children:e,htmlFor:a,required:t=!1,className:r=""}){return s.jsxs("label",{htmlFor:a,className:`
+        text-xs
+        font-medium
+        tracking-wider
+        uppercase
+        text-[var(--color-fg-secondary)]
+        ${r}
+      `.trim(),style:{fontFamily:"var(--font-mono)",letterSpacing:"0.08em"},children:[e,t&&s.jsx("span",{className:"ml-1 text-[var(--color-error)]","aria-hidden":!0,children:"*"})]})}c.displayName="Typography.Label";function m({children:e,className:a=""}){return s.jsx("p",{className:`
+        text-xl
+        font-light
+        text-[var(--color-fg-secondary)]
+        leading-relaxed
+        ${a}
+      `.trim(),children:e})}m.displayName="Typography.Lead";n.__docgenInfo={description:"",methods:[],displayName:"Typography.Text",props:{children:{required:!0,tsType:{name:"ReactReactNode",raw:"React.ReactNode"},description:""},className:{required:!1,tsType:{name:"string"},description:"",defaultValue:{value:"''",computed:!1}},size:{required:!1,tsType:{name:"union",raw:"'lg' | 'base' | 'sm' | 'xs'",elements:[{name:"literal",value:"'lg'"},{name:"literal",value:"'base'"},{name:"literal",value:"'sm'"},{name:"literal",value:"'xs'"}]},description:"",defaultValue:{value:"'base'",computed:!1}},secondary:{required:!1,tsType:{name:"boolean"},description:"",defaultValue:{value:"false",computed:!1}},muted:{required:!1,tsType:{name:"boolean"},description:"",defaultValue:{value:"false",computed:!1}}}};i.__docgenInfo={description:"",methods:[],displayName:"Typography.Caption",props:{children:{required:!0,tsType:{name:"ReactReactNode",raw:"React.ReactNode"},description:""},className:{required:!1,tsType:{name:"string"},description:"",defaultValue:{value:"''",computed:!1}},muted:{required:!1,tsType:{name:"boolean"},description:"",defaultValue:{value:"true",computed:!1}}}};d.__docgenInfo={description:"",methods:[],displayName:"Typography.Mono",props:{children:{required:!0,tsType:{name:"ReactReactNode",raw:"React.ReactNode"},description:""},className:{required:!1,tsType:{name:"string"},description:"",defaultValue:{value:"''",computed:!1}},size:{required:!1,tsType:{name:"union",raw:"'sm' | 'xs' | '2xs'",elements:[{name:"literal",value:"'sm'"},{name:"literal",value:"'xs'"},{name:"literal",value:"'2xs'"}]},description:"",defaultValue:{value:"'sm'",computed:!1}},accent:{required:!1,tsType:{name:"boolean"},description:"",defaultValue:{value:"false",computed:!1}}}};c.__docgenInfo={description:"",methods:[],displayName:"Typography.Label",props:{children:{required:!0,tsType:{name:"ReactReactNode",raw:"React.ReactNode"},description:""},className:{required:!1,tsType:{name:"string"},description:"",defaultValue:{value:"''",computed:!1}},htmlFor:{required:!1,tsType:{name:"string"},description:""},required:{required:!1,tsType:{name:"boolean"},description:"",defaultValue:{value:"false",computed:!1}}}};m.__docgenInfo={description:"",methods:[],displayName:"Typography.Lead",props:{children:{required:!0,tsType:{name:"ReactReactNode",raw:"React.ReactNode"},description:""},className:{required:!1,tsType:{name:"string"},description:"",defaultValue:{value:"''",computed:!1}}}};export{i as C,h as H,m as L,d as M,n as T,c as a,v as b,N as c,T as d,R as e,b as f};
