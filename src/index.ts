@@ -1,3 +1,6 @@
+// ─── Styles (consumers: import '@kingsley/design-system/dist/style.css') ──
+import './styles/global.css'
+
 // ─── Tokens ───────────────────────────────────────────
 export * from './tokens'
 
@@ -17,6 +20,11 @@ export * from './components/ThemeProvider'
 export * from './components/Badge'
 export * from './components/Toggle'
 export * from './components/Tabs'
+export * from './components/Modal'
+export * from './components/Toast'
+export * from './components/Avatar'
+export * from './components/Tooltip'
+export * from './components/Select'
 
 // ─── CSS (consumers must import this) ─────────────────
 // import '@kingsley/design-system/dist/style.css'

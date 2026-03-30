@@ -11,6 +11,7 @@ export const zIndex = {
   overlay:  1300,  // page overlay / drawer backdrop
   modal:    1400,  // modal dialogs
   popover:  1500,  // tooltips, popovers (above modals)
+  tooltip:  1550,  // tooltip layer (between popover and toast)
   toast:    1600,  // notifications (topmost UI layer)
 } as const
 
