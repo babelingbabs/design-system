@@ -17,16 +17,16 @@ export const colors = {
   foreground: {
     primary: '#1A1A1A',   // near-black, primary text
     secondary: '#555555', // secondary text
-    tertiary: '#8A8A8A',  // placeholder, captions
+    tertiary: '#707070',  // placeholder, captions — WCAG AA 4.74:1 on bg.base
     disabled: '#BBBBBB',  // disabled states
     inverse: '#FAFAFA',   // text on dark backgrounds
   },
 
   // Borders / dividers
   border: {
-    subtle: '#E8E8E8',    // hairline borders, grid lines
-    default: '#D4D4D4',   // standard border
-    strong: '#AAAAAA',    // emphasized border
+    subtle: '#C7C7CC',    // decorative borders, hairlines
+    default: '#8F8F8F',   // functional border — WCAG 3:1 on bg.base
+    strong: '#6E6E6E',    // emphasized border — 4.9:1 on bg.base
   },
 
   // Accent — Apple Blue (#007AFF) as primary CTA
@@ -76,16 +76,16 @@ export const darkColors = {
   foreground: {
     primary:   '#FFFFFF', // pure white primary
     secondary: '#ADADAD', // iOS secondaryLabel dark
-    tertiary:  '#636366', // iOS tertiaryLabel dark
+    tertiary:  '#929292', // tertiary text — WCAG AA 4.48:1 on bg.muted
     disabled:  '#3A3A3C', // iOS quaternaryLabel dark
     inverse:   '#000000', // text on light bg
   },
 
   // Borders — iOS separator scale dark
   border: {
-    subtle:  '#38383A', // iOS opaqueSeparator dark
-    default: '#48484A', // iOS separator dark
-    strong:  '#636366', // emphasized border
+    subtle:  '#48484A', // decorative separator
+    default: '#676767', // functional border — WCAG 3:1 on bg.subtle
+    strong:  '#929292', // emphasized border — 4.5:1 on bg.muted
   },
 
   // Accent — Apple Blue dark variant (#0A84FF), scale shifted lighter

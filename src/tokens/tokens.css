@@ -18,14 +18,14 @@
   /* ─── Colors: Foreground / Text ───────────────────── */
   --color-fg-primary:   #1A1A1A;
   --color-fg-secondary: #555555;
-  --color-fg-tertiary:  #8A8A8A;
+  --color-fg-tertiary:  #707070;
   --color-fg-disabled:  #BBBBBB;
   --color-fg-inverse:   #FAFAFA;
 
   /* ─── Colors: Borders ─────────────────────────────── */
-  --color-border-subtle:  #E8E8E8;
-  --color-border-default: #D4D4D4;
-  --color-border-strong:  #AAAAAA;
+  --color-border-subtle:  #C7C7CC;
+  --color-border-default: #8F8F8F;
+  --color-border-strong:  #6E6E6E;
 
   /* ─── Colors: Accent (Apple Blue #007AFF) ───────────── */
   --color-accent-50:  #EBF5FF;
@@ -173,14 +173,14 @@
   /* Foreground — Apple dark text hierarchy */
   --color-fg-primary:   #FFFFFF;
   --color-fg-secondary: #ADADAD; /* iOS secondaryLabel dark */
-  --color-fg-tertiary:  #636366; /* iOS tertiaryLabel dark */
+  --color-fg-tertiary:  #929292; /* WCAG AA on elevated surfaces */
   --color-fg-disabled:  #3A3A3C; /* iOS quaternaryLabel dark */
   --color-fg-inverse:   #000000;
 
   /* Borders — iOS separator scale */
-  --color-border-subtle:  #38383A; /* iOS opaqueSeparator */
-  --color-border-default: #48484A; /* iOS separator */
-  --color-border-strong:  #636366;
+  --color-border-subtle:  #48484A;
+  --color-border-default: #676767;
+  --color-border-strong:  #929292;
 
   /* Accent — Apple Blue dark (#0A84FF), shifted lighter */
   --color-accent-50:  #001A33;
@@ -248,14 +248,14 @@
     /* Foreground — Apple dark text hierarchy */
     --color-fg-primary:   #FFFFFF;
     --color-fg-secondary: #ADADAD;
-    --color-fg-tertiary:  #636366;
+    --color-fg-tertiary:  #929292;
     --color-fg-disabled:  #3A3A3C;
     --color-fg-inverse:   #000000;
 
     /* Borders — iOS separator scale */
-    --color-border-subtle:  #38383A;
-    --color-border-default: #48484A;
-    --color-border-strong:  #636366;
+    --color-border-subtle:  #48484A;
+    --color-border-default: #676767;
+    --color-border-strong:  #929292;
 
     /* Accent — Apple Blue dark (#0A84FF), shifted lighter */
     --color-accent-50:  #001A33;
