@@ -35,6 +35,11 @@ export * from './components/Progress'
 export * from './components/Skeleton'
 export * from './components/Separator'
 export * from './components/Accordion'
+export * from './components/Table'
+export * from './components/DropdownMenu'
+export * from './components/Drawer'
+export * from './components/Breadcrumb'
+export * from './components/Pagination'
 
 // ─── CSS (consumers must import this) ─────────────────
 // import '@kingsley/design-system/dist/style.css'
