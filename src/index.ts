@@ -25,6 +25,11 @@ export * from './components/Toast'
 export * from './components/Avatar'
 export * from './components/Tooltip'
 export * from './components/Select'
+export * from './components/Checkbox'
+export * from './components/RadioGroup'
+export * from './components/Textarea'
+export * from './components/Slider'
+export * from './components/Switch'
 
 // ─── CSS (consumers must import this) ─────────────────
 // import '@kingsley/design-system/dist/style.css'
