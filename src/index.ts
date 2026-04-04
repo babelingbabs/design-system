@@ -30,6 +30,11 @@ export * from './components/RadioGroup'
 export * from './components/Textarea'
 export * from './components/Slider'
 export * from './components/Switch'
+export * from './components/Alert'
+export * from './components/Progress'
+export * from './components/Skeleton'
+export * from './components/Separator'
+export * from './components/Accordion'
 
 // ─── CSS (consumers must import this) ─────────────────
 // import '@kingsley/design-system/dist/style.css'
