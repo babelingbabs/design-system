@@ -5,7 +5,7 @@ import { H1, H2, H3, H4, H5, H6, Text, Caption, Mono, Label, Lead } from './Typo
  * # Typography
  * Two typefaces. One system.
  *
- * **Inter** — the workhorse. Clean, neutral, humanist. Does the heavy lifting for UI text.
+ * **SF Pro** (system font) — the workhorse. Clean, neutral, native. Does the heavy lifting for UI text.
  *
  * **JetBrains Mono** — the accent. Technical labels, metadata, code. Brings the blueprint feel.
  */
