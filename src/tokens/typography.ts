@@ -9,8 +9,8 @@
  */
 
 export const fontFamily = {
-  sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'].join(', '),
-  mono: ['JetBrains Mono', 'Fira Code', 'Consolas', 'monospace'].join(', '),
+  sans: ['-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', '"SF Pro Text"', 'system-ui', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', 'sans-serif'].join(', '),
+  mono: ['JetBrains Mono', 'Fira Code', '"SF Mono"', 'Consolas', 'monospace'].join(', '),
 } as const
 
 /**
