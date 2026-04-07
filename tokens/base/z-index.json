@@ -1,0 +1,13 @@
+{
+  "z": {
+    "base":     { "$value": "0",    "$type": "other", "$description": "Default stacking context" },
+    "raised":   { "$value": "1",    "$type": "other", "$description": "Slightly raised" },
+    "dropdown": { "$value": "1000", "$type": "other", "$description": "Dropdown menus, select panels" },
+    "sticky":   { "$value": "1100", "$type": "other", "$description": "Sticky headers / navbars" },
+    "overlay":  { "$value": "1300", "$type": "other", "$description": "Page overlay / drawer backdrop" },
+    "modal":    { "$value": "1400", "$type": "other", "$description": "Modal dialogs" },
+    "popover":  { "$value": "1500", "$type": "other", "$description": "Tooltips, popovers (above modals)" },
+    "tooltip":  { "$value": "1550", "$type": "other", "$description": "Tooltip layer" },
+    "toast":    { "$value": "1600", "$type": "other", "$description": "Notifications (topmost UI layer)" }
+  }
+}

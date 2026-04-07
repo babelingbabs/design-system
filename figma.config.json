@@ -1,0 +1,9 @@
+{
+  "codeConnect": {
+    "include": ["figma-connect/**/*.figma.tsx"],
+    "parser": "react",
+    "importPaths": {
+      "../src/components/*": "@kingsley/design-system"
+    }
+  }
+}

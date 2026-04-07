@@ -26,8 +26,9 @@
     "storybook": "storybook dev -p 6006",
     "type-check": "tsc --noEmit",
     "lint": "eslint src --ext ts,tsx",
-    "tokens": "node style-dictionary.config.mjs",
-    "tokens:watch": "nodemon --watch tokens/ --ext json --exec \"node style-dictionary.config.mjs\""
+    "tokens": "node sd.config.mjs",
+    "tokens:watch": "nodemon --watch tokens/ --ext json --exec \"node sd.config.mjs\"",
+    "figma:connect": "npx figma connect publish"
   },
   "peerDependencies": {
     "react": "^18.0.0",
@@ -38,6 +39,7 @@
     "framer-motion": "^11.0.0"
   },
   "devDependencies": {
+    "@figma/code-connect": "^1.4.3",
     "@storybook/addon-docs": "^8.0.0",
     "@storybook/addon-essentials": "^8.0.0",
     "@storybook/addon-themes": "^8.0.0",

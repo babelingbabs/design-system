@@ -1,28 +1,129 @@
 {
   "font": {
-    "family": {
-      "sans": { "$value": "Inter, system-ui, -apple-system, sans-serif", "$type": "fontFamily" },
-      "mono": { "$value": "JetBrains Mono, Fira Code, Consolas, monospace", "$type": "fontFamily" }
+    "sans": {
+      "$value": ["-apple-system", "BlinkMacSystemFont", "SF Pro Display", "SF Pro Text", "system-ui", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"],
+      "$type": "fontFamily"
     },
-    "weight": {
-      "light":    { "$value": "300", "$type": "fontWeight" },
-      "regular":  { "$value": "400", "$type": "fontWeight" },
-      "medium":   { "$value": "500", "$type": "fontWeight" },
-      "semibold": { "$value": "600", "$type": "fontWeight" },
-      "bold":     { "$value": "700", "$type": "fontWeight" }
+    "mono": {
+      "$value": ["JetBrains Mono", "Fira Code", "SF Mono", "Consolas", "monospace"],
+      "$type": "fontFamily"
     }
   },
   "text": {
-    "caption2":    { "$value": "0.6875rem",  "$type": "dimension" },
-    "caption1":    { "$value": "0.75rem",    "$type": "dimension" },
-    "footnote":    { "$value": "0.8125rem",  "$type": "dimension" },
-    "subhead":     { "$value": "0.9375rem",  "$type": "dimension" },
-    "callout":     { "$value": "1rem",       "$type": "dimension" },
-    "body":        { "$value": "1.0625rem",  "$type": "dimension" },
-    "headline":    { "$value": "1.0625rem",  "$type": "dimension" },
-    "title3":      { "$value": "1.25rem",    "$type": "dimension" },
-    "title2":      { "$value": "1.375rem",   "$type": "dimension" },
-    "title1":      { "$value": "1.75rem",    "$type": "dimension" },
-    "large-title": { "$value": "2.125rem",   "$type": "dimension" }
+    "heading": {
+      "72": { "$value": "4.5rem",   "$type": "other" },
+      "64": { "$value": "4rem",     "$type": "other" },
+      "56": { "$value": "3.5rem",   "$type": "other" },
+      "48": { "$value": "3rem",     "$type": "other" },
+      "40": { "$value": "2.5rem",   "$type": "other" },
+      "32": { "$value": "2rem",     "$type": "other" },
+      "24": { "$value": "1.5rem",   "$type": "other" },
+      "20": { "$value": "1.25rem",  "$type": "other" },
+      "16": { "$value": "1rem",     "$type": "other" },
+      "14": { "$value": "0.875rem", "$type": "other" }
+    },
+    "button": {
+      "16": { "$value": "1rem",     "$type": "other" },
+      "14": { "$value": "0.875rem", "$type": "other" },
+      "12": { "$value": "0.75rem",  "$type": "other" }
+    },
+    "label": {
+      "20":      { "$value": "1.25rem",   "$type": "other" },
+      "18":      { "$value": "1.125rem",  "$type": "other" },
+      "16":      { "$value": "1rem",      "$type": "other" },
+      "14":      { "$value": "0.875rem",  "$type": "other" },
+      "14-mono": { "$value": "0.875rem",  "$type": "other" },
+      "13":      { "$value": "0.8125rem", "$type": "other" },
+      "13-mono": { "$value": "0.8125rem", "$type": "other" },
+      "12":      { "$value": "0.75rem",   "$type": "other" },
+      "12-mono": { "$value": "0.75rem",   "$type": "other" }
+    },
+    "copy": {
+      "24":      { "$value": "1.5rem",    "$type": "other" },
+      "20":      { "$value": "1.25rem",   "$type": "other" },
+      "18":      { "$value": "1.125rem",  "$type": "other" },
+      "16":      { "$value": "1rem",      "$type": "other" },
+      "14":      { "$value": "0.875rem",  "$type": "other" },
+      "13":      { "$value": "0.8125rem", "$type": "other" },
+      "13-mono": { "$value": "0.8125rem", "$type": "other" }
+    }
+  },
+  "lh": {
+    "heading": {
+      "72": { "$value": "1.1",  "$type": "other" },
+      "64": { "$value": "1.1",  "$type": "other" },
+      "56": { "$value": "1.1",  "$type": "other" },
+      "48": { "$value": "1.1",  "$type": "other" },
+      "40": { "$value": "1.15", "$type": "other" },
+      "32": { "$value": "1.2",  "$type": "other" },
+      "24": { "$value": "1.25", "$type": "other" },
+      "20": { "$value": "1.3",  "$type": "other" },
+      "16": { "$value": "1.4",  "$type": "other" },
+      "14": { "$value": "1.4",  "$type": "other" }
+    },
+    "button": {
+      "16": { "$value": "1.5", "$type": "other" },
+      "14": { "$value": "1.5", "$type": "other" },
+      "12": { "$value": "1.5", "$type": "other" }
+    },
+    "label": {
+      "20":      { "$value": "1.6", "$type": "other" },
+      "18":      { "$value": "1.6", "$type": "other" },
+      "16":      { "$value": "1.6", "$type": "other" },
+      "14":      { "$value": "1.6", "$type": "other" },
+      "14-mono": { "$value": "1.6", "$type": "other" },
+      "13":      { "$value": "1.6", "$type": "other" },
+      "13-mono": { "$value": "1.6", "$type": "other" },
+      "12":      { "$value": "1.6", "$type": "other" },
+      "12-mono": { "$value": "1.6", "$type": "other" }
+    },
+    "copy": {
+      "24":      { "$value": "1.6",  "$type": "other" },
+      "20":      { "$value": "1.6",  "$type": "other" },
+      "18":      { "$value": "1.6",  "$type": "other" },
+      "16":      { "$value": "1.6",  "$type": "other" },
+      "14":      { "$value": "1.6",  "$type": "other" },
+      "13":      { "$value": "1.55", "$type": "other" },
+      "13-mono": { "$value": "1.55", "$type": "other" }
+    }
+  },
+  "ls": {
+    "heading": {
+      "72": { "$value": "-0.04em",  "$type": "other" },
+      "64": { "$value": "-0.04em",  "$type": "other" },
+      "56": { "$value": "-0.04em",  "$type": "other" },
+      "48": { "$value": "-0.035em", "$type": "other" },
+      "40": { "$value": "-0.03em",  "$type": "other" },
+      "32": { "$value": "-0.025em", "$type": "other" },
+      "24": { "$value": "-0.02em",  "$type": "other" },
+      "20": { "$value": "-0.015em", "$type": "other" },
+      "16": { "$value": "-0.01em",  "$type": "other" },
+      "14": { "$value": "0",        "$type": "other" }
+    },
+    "button": {
+      "16": { "$value": "0", "$type": "other" },
+      "14": { "$value": "0", "$type": "other" },
+      "12": { "$value": "0", "$type": "other" }
+    },
+    "label": {
+      "20":      { "$value": "0",      "$type": "other" },
+      "18":      { "$value": "0",      "$type": "other" },
+      "16":      { "$value": "0",      "$type": "other" },
+      "14":      { "$value": "0",      "$type": "other" },
+      "14-mono": { "$value": "0",      "$type": "other" },
+      "13":      { "$value": "0",      "$type": "other" },
+      "13-mono": { "$value": "0",      "$type": "other" },
+      "12":      { "$value": "0.04em", "$type": "other" },
+      "12-mono": { "$value": "0",      "$type": "other" }
+    },
+    "copy": {
+      "24":      { "$value": "-0.01em",  "$type": "other" },
+      "20":      { "$value": "-0.01em",  "$type": "other" },
+      "18":      { "$value": "-0.005em", "$type": "other" },
+      "16":      { "$value": "0",        "$type": "other" },
+      "14":      { "$value": "0",        "$type": "other" },
+      "13":      { "$value": "0",        "$type": "other" },
+      "13-mono": { "$value": "0",        "$type": "other" }
+    }
   }
 }
