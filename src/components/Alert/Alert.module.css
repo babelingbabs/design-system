@@ -1,0 +1,104 @@
+/* ============================================
+   Alert — CSS Module
+   Uses CSS custom properties from the token system
+   ============================================ */
+
+.alert {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-default);
+  border-left-width: 4px;
+  overflow: hidden;
+  font-family: var(--typography-font-family-sans);
+}
+
+/* ---- Variants ---- */
+.alert[data-variant='info'] {
+  background-color: var(--color-accent-subtle);
+  border-color: var(--color-accent-subtle-fg);
+  border-left-color: var(--color-accent-default);
+  color: var(--color-accent-subtle-fg);
+}
+
+.alert[data-variant='success'] {
+  background-color: var(--color-success-subtle);
+  border-color: var(--color-success-border);
+  border-left-color: var(--color-success-default);
+  color: var(--color-success-subtle-fg);
+}
+
+.alert[data-variant='warning'] {
+  background-color: var(--color-warning-subtle);
+  border-color: var(--color-warning-border);
+  border-left-color: var(--color-warning-default);
+  color: var(--color-warning-subtle-fg);
+}
+
+.alert[data-variant='error'] {
+  background-color: var(--color-error-subtle);
+  border-color: var(--color-error-border);
+  border-left-color: var(--color-error-default);
+  color: var(--color-error-subtle-fg);
+}
+
+/* ---- Icon ---- */
+.icon {
+  flex-shrink: 0;
+  display: flex;
+  margin-top: 1px;
+}
+
+/* ---- Body ---- */
+.body {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: var(--typography-font-size-sm);
+  font-weight: var(--typography-font-weight-semibold);
+  line-height: 1.4;
+}
+
+.description {
+  font-size: var(--typography-font-size-sm);
+  line-height: 1.5;
+  margin-top: var(--spacing-1);
+  opacity: 0.9;
+}
+
+.title:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- Close button ---- */
+.closeButton {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-sm);
+  background-color: transparent;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity var(--motion-duration-fast) var(--motion-easing-ease-in-out);
+  outline: none;
+}
+
+.closeButton:hover {
+  opacity: 1;
+}
+
+.closeButton:focus-visible {
+  outline: var(--state-focus-ring-width) solid var(--state-focus-ring-color);
+  outline-offset: var(--state-focus-ring-offset);
+}

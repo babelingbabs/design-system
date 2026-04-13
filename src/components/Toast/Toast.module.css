@@ -1,0 +1,125 @@
+/* ============================================
+   Toast — CSS Module
+   Uses CSS custom properties from the token system
+   ============================================ */
+
+/* ---- Viewport ---- */
+.viewport {
+  position: fixed;
+  bottom: var(--spacing-6);
+  right: var(--spacing-6);
+  z-index: 100;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: var(--spacing-2);
+  width: 360px;
+  max-width: calc(100vw - var(--spacing-8));
+  outline: none;
+  /* Reset <ol> default styles */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---- Root (li wrapper from Radix) ---- */
+.toastRoot {
+  list-style: none;
+}
+
+/* ---- Toast card ---- */
+.toast {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+  padding: var(--spacing-3) var(--spacing-4);
+  background-color: var(--color-bg-overlay);
+  border: 1px solid var(--color-border-default);
+  border-left-width: 4px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  font-family: var(--typography-font-family-sans);
+  cursor: default;
+  will-change: transform, opacity;
+}
+
+/* ---- Variants ---- */
+.toast[data-variant='default'] {
+  border-left-color: var(--color-fg-muted);
+  color: var(--color-fg-default);
+}
+
+.toast[data-variant='success'] {
+  border-left-color: var(--color-success-default);
+  color: var(--color-fg-default);
+}
+
+.toast[data-variant='warning'] {
+  border-left-color: var(--color-warning-default);
+  color: var(--color-fg-default);
+}
+
+.toast[data-variant='error'] {
+  border-left-color: var(--color-error-default);
+  color: var(--color-fg-default);
+}
+
+/* ---- Icon ---- */
+.icon {
+  flex-shrink: 0;
+  display: flex;
+  margin-top: 1px;
+}
+
+.toast[data-variant='default'] .icon { color: var(--color-fg-muted); }
+.toast[data-variant='success'] .icon { color: var(--color-success-default); }
+.toast[data-variant='warning'] .icon { color: var(--color-warning-default); }
+.toast[data-variant='error'] .icon { color: var(--color-error-default); }
+
+/* ---- Body ---- */
+.body {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--typography-font-size-sm);
+  font-weight: var(--typography-font-weight-semibold);
+  line-height: 1.4;
+  color: var(--color-fg-default);
+}
+
+.description {
+  font-size: var(--typography-font-size-sm);
+  line-height: 1.5;
+  color: var(--color-fg-muted);
+  margin-top: var(--spacing-1);
+}
+
+/* ---- Close button ---- */
+.closeButton {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-sm);
+  background-color: transparent;
+  color: var(--color-fg-muted);
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity var(--motion-duration-fast) var(--motion-easing-ease-in-out);
+  outline: none;
+}
+
+.closeButton:hover {
+  opacity: 1;
+  color: var(--color-fg-default);
+}
+
+.closeButton:focus-visible {
+  outline: var(--state-focus-ring-width) solid var(--state-focus-ring-color);
+  outline-offset: var(--state-focus-ring-offset);
+}

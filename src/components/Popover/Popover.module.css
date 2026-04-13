@@ -1,0 +1,22 @@
+/* ============================================
+   Popover — CSS Module
+   Uses CSS custom properties from the token system
+   ============================================ */
+
+.content {
+  z-index: 50;
+  min-width: 180px;
+  padding: var(--spacing-3);
+  background-color: var(--color-bg-overlay);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  outline: none;
+  font-family: var(--typography-font-family-sans);
+}
+
+.arrow {
+  fill: var(--color-bg-overlay);
+  /* border-color bleeds through as a subtle stroke via drop-shadow */
+  filter: drop-shadow(0 1px 0 var(--color-border-default));
+}
