@@ -1,0 +1,132 @@
+/* ============================================
+   Tabs — CSS Module
+   Uses CSS custom properties from the token system
+   ============================================ */
+
+/* ---- Root ---- */
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---- List ---- */
+.list {
+  display: flex;
+  align-items: stretch;
+  flex-shrink: 0;
+}
+
+/* Underline variant */
+.list[data-variant='underline'] {
+  border-bottom: 1px solid var(--color-border-default);
+  gap: var(--spacing-1);
+}
+
+/* Pill variant */
+.list[data-variant='pill'] {
+  gap: var(--spacing-1);
+  padding: var(--spacing-1);
+  background-color: var(--color-bg-subtle);
+  border-radius: var(--radius-lg);
+  width: fit-content;
+}
+
+/* ---- Trigger ---- */
+.trigger {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1-5);
+  font-family: var(--typography-font-family-sans);
+  font-weight: var(--typography-font-weight-medium);
+  color: var(--color-fg-muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  outline: none;
+  transition: color var(--motion-duration-fast) var(--motion-easing-ease-in-out);
+}
+
+.trigger:hover {
+  color: var(--color-fg-default);
+}
+
+.trigger[data-state='active'] {
+  color: var(--color-fg-default);
+}
+
+.trigger[data-disabled] {
+  opacity: var(--state-disabled-opacity);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.trigger:focus-visible {
+  outline: var(--state-focus-ring-width) solid var(--state-focus-ring-color);
+  outline-offset: var(--state-focus-ring-offset);
+  border-radius: var(--radius-sm);
+}
+
+/* ---- Trigger icon ---- */
+.triggerIcon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ---- Underline variant trigger ---- */
+.list[data-variant='underline'] .trigger {
+  padding: var(--spacing-2) var(--spacing-3);
+}
+
+.list[data-variant='underline'][data-size='sm'] .trigger {
+  padding: var(--spacing-1-5) var(--spacing-2);
+  font-size: var(--typography-font-size-sm);
+}
+
+.list[data-variant='underline'][data-size='md'] .trigger {
+  font-size: var(--typography-font-size-sm);
+}
+
+/* ---- Pill variant trigger ---- */
+.list[data-variant='pill'] .trigger {
+  padding: var(--spacing-1-5) var(--spacing-3);
+  border-radius: var(--radius-md);
+  font-size: var(--typography-font-size-sm);
+}
+
+.list[data-variant='pill'][data-size='sm'] .trigger {
+  padding: var(--spacing-1) var(--spacing-2-5);
+  font-size: var(--typography-font-size-xs);
+}
+
+.list[data-variant='pill'] .trigger[data-state='active'] {
+  background-color: var(--color-bg-elevated);
+  color: var(--color-fg-default);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.10), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+/* ---- Underline indicator (Framer Motion layoutId target) ---- */
+.indicator {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--color-primary-default);
+  border-radius: 1px 1px 0 0;
+}
+
+/* ---- Content panel ---- */
+.content {
+  padding-top: var(--spacing-4);
+  outline: none;
+}
+
+.content:focus-visible {
+  outline: var(--state-focus-ring-width) solid var(--state-focus-ring-color);
+  outline-offset: var(--state-focus-ring-offset);
+  border-radius: var(--radius-sm);
+}

@@ -1,0 +1,88 @@
+/* ============================================
+   DropdownMenu — CSS Module
+   Uses CSS custom properties from the token system
+   ============================================ */
+
+/* ---- Content panel ---- */
+.content {
+  min-width: 200px;
+  padding: var(--spacing-1);
+  background-color: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.10),
+    0 2px 8px rgba(0, 0, 0, 0.06);
+  outline: none;
+  z-index: 50;
+}
+
+/* ---- Item ---- */
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-2) var(--spacing-3);
+  font-family: var(--typography-font-family-sans);
+  font-size: var(--typography-font-size-sm);
+  font-weight: var(--typography-font-weight-normal);
+  color: var(--color-fg-default);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  transition: background-color var(--motion-duration-fast) var(--motion-easing-ease-in-out);
+}
+
+.item:hover,
+.item[data-highlighted] {
+  background-color: var(--color-bg-subtle);
+}
+
+.item[data-disabled] {
+  opacity: var(--state-disabled-opacity);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ---- Item icon ---- */
+.itemIcon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--color-fg-muted);
+}
+
+/* ---- Item label ---- */
+.itemLabel {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ---- Item shortcut ---- */
+.itemShortcut {
+  margin-left: auto;
+  font-size: var(--typography-font-size-xs);
+  color: var(--color-fg-muted);
+  letter-spacing: 0.02em;
+}
+
+/* ---- Group label ---- */
+.label {
+  padding: var(--spacing-1) var(--spacing-3);
+  padding-top: var(--spacing-2);
+  font-family: var(--typography-font-family-sans);
+  font-size: var(--typography-font-size-xs);
+  font-weight: var(--typography-font-weight-medium);
+  color: var(--color-fg-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  user-select: none;
+}
+
+/* ---- Separator ---- */
+.separator {
+  height: 1px;
+  background-color: var(--color-border-default);
+  margin: var(--spacing-1) 0;
+}

@@ -33,6 +33,49 @@ export type { DialogProps, DialogContentProps, DialogHeaderProps, DialogFooterPr
 export { Tooltip } from './components/Tooltip'
 export type { TooltipProps, TooltipSide, TooltipAlign } from './components/Tooltip/Tooltip.types'
 
+export {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverClose,
+} from './components/Popover'
+export type { PopoverProps, PopoverContentProps, PopoverSide, PopoverAlign } from './components/Popover/Popover.types'
+
+export { Alert } from './components/Alert'
+export type { AlertProps, AlertVariant } from './components/Alert/Alert.types'
+
+export { ToastProvider, ToastViewport, useToast } from './components/Toast'
+export type { ToastOptions, ToastItem, ToastContextValue, ToastProviderProps, ToastVariant } from './components/Toast/Toast.types'
+
+export {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuLabel,
+  DropdownMenuGroup,
+} from './components/DropdownMenu'
+export type {
+  DropdownMenuProps,
+  DropdownMenuContentProps,
+  DropdownMenuItemProps,
+  DropdownMenuLabelProps,
+  DropdownMenuSeparatorProps,
+  DropdownMenuSide,
+  DropdownMenuAlign,
+} from './components/DropdownMenu/DropdownMenu.types'
+
+export { Tabs, TabsList, TabsTrigger, TabsContent } from './components/Tabs'
+export type {
+  TabsProps,
+  TabsListProps,
+  TabsTriggerProps,
+  TabsContentProps,
+  TabsVariant,
+  TabsSize,
+} from './components/Tabs/Tabs.types'
+
 // Components
 export { Button } from './components/Button'
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button/Button.types'
