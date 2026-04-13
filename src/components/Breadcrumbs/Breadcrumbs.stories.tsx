@@ -6,7 +6,35 @@ const meta: Meta<typeof Breadcrumbs> = {
   title: 'Navigation/Breadcrumbs',
   component: Breadcrumbs,
   tags: ['autodocs'],
-  parameters: { layout: 'centered' },
+  parameters: {
+    layout: 'centered',
+    docs: {
+      description: {
+        component: `
+## When to use
+- Hierarchical navigation within a multi-level site or application
+- Helping users understand their current location and navigate back
+- Pages that are 3+ levels deep in a navigation tree
+
+## When NOT to use
+- Single-level or two-level applications where location is always obvious
+- Wizard steps or form progress (use a stepper component)
+- Mobile navigation where space is constrained (consider a back button instead)
+
+## Best practices
+- Always make all items except the last one a link (\`href\`)
+- Mark the current page with \`current={true}\` — do not add a link to the current item
+- Use \`maxItems\` to collapse long breadcrumbs with a "…" ellipsis
+- Keep breadcrumb labels short and match the page title
+
+## Accessibility
+- Rendered inside a \`<nav aria-label="Breadcrumb">\` landmark
+- The current page item has \`aria-current="page"\`
+- Collapsed items under \`maxItems\` remain accessible to screen readers
+        `,
+      },
+    },
+  },
 }
 
 export default meta

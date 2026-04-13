@@ -5,6 +5,33 @@ const meta: Meta<typeof Badge> = {
   title: 'Foundation/Badge',
   component: Badge,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: `
+## When to use
+- Communicating status at a glance (Active, Pending, Error)
+- Showing counts or numeric indicators (unread messages, items in cart)
+- Applying category or taxonomy labels to content
+
+## When NOT to use
+- Triggering actions (use Button)
+- Displaying long text — badges should be 1–3 words maximum
+- Navigation (use a link or tab)
+
+## Best practices
+- Keep text concise: 1–2 words or a short number
+- Use semantic color variants consistently across the product (success = green, error = red)
+- Pair \`dot\` badges with status text for additional clarity
+
+## Accessibility
+- Do not rely on color alone to convey meaning — include text or an icon
+- Add \`aria-label\` when the badge meaning is not clear from surrounding context
+- Ensure sufficient contrast between badge background and text
+        `,
+      },
+    },
+  },
   argTypes: {
     variant: {
       control: 'select',

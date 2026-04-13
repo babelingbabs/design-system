@@ -19,6 +19,33 @@ const meta: Meta<typeof DialogContent> = {
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component: `
+## When to use
+- Confirming destructive or irreversible actions (delete, discard)
+- Collecting focused input in a modal context
+- Presenting critical information that requires an immediate decision
+
+## When NOT to use
+- Non-blocking or optional information (use Toast or Alert)
+- Complex multi-step flows with many fields (consider a dedicated page)
+- Content that users need to reference while the overlay is open (use a side panel)
+
+## Best practices
+- Dialogs should have a clear title and a single primary action
+- Keep dialog content concise — users should not need to scroll inside a dialog
+- Always provide a way to dismiss: a close button or a cancel action
+- Choose \`size\` based on content: \`sm\` for confirmations, \`md\`/\`lg\` for forms
+
+## Accessibility
+- Renders with \`role="dialog"\` and \`aria-modal="true"\` via Radix UI
+- Focus is trapped inside the dialog while open
+- \`DialogTitle\` is linked via \`aria-labelledby\` automatically
+- Pressing Escape closes the dialog
+        `,
+      },
+    },
   },
 }
 

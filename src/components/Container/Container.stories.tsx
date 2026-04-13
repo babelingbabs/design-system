@@ -5,7 +5,32 @@ const meta: Meta<typeof Container> = {
   title: 'Layout/Container',
   component: Container,
   tags: ['autodocs'],
-  parameters: { layout: 'fullscreen' },
+  parameters: {
+    layout: 'fullscreen',
+    docs: {
+      description: {
+        component: `
+## When to use
+- Constraining page content to a readable max-width with centered alignment
+- Wrapping full-width sections to maintain a consistent content column
+- Marking semantic page regions (main, section, article) with appropriate max-widths
+
+## When NOT to use
+- Nested Containers — pick one Container per layout level
+- Layouts that intentionally bleed to the viewport edge (use full-width elements directly)
+
+## Best practices
+- Use \`size="lg"\` for standard page layouts; \`size="sm"\` for focused content like articles
+- Set \`padding={true}\` (default) to get horizontal gutters on small screens
+- Use \`as="main"\` for the primary content area, \`as="section"\` for distinct content regions
+
+## Accessibility
+- The \`as\` prop maps directly to a semantic HTML element — use it to structure landmark regions
+- \`main\`, \`article\`, and \`section\` are ARIA landmark roles that aid keyboard navigation
+        `,
+      },
+    },
+  },
 }
 
 export default meta

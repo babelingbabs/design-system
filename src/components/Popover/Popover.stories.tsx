@@ -10,6 +10,31 @@ const meta: Meta<typeof PopoverContent> = {
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component: `
+## When to use
+- Contextual panels with interactive content (filters, mini-forms, color pickers)
+- Rich information overlays where a Tooltip would be too limited
+- Lightweight alternatives to a full Dialog for supplementary actions
+
+## When NOT to use
+- Simple text labels (use Tooltip)
+- Blocking decisions that require full attention (use Dialog)
+- Navigation menus (use DropdownMenu)
+
+## Best practices
+- Include a close button or rely on click-outside to dismiss
+- Keep popover content focused on a single task
+- Position relative to the trigger: prefer \`side="bottom"\` with \`align="start"\` for natural reading flow
+
+## Accessibility
+- Rendered with \`role="dialog"\` and focus management via Radix UI
+- Close button should be keyboard accessible
+- Pressing Escape dismisses the popover
+        `,
+      },
+    },
   },
 }
 

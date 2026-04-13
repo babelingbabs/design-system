@@ -6,6 +6,34 @@ const meta: Meta<typeof Checkbox> = {
   title: 'Forms/Checkbox',
   component: Checkbox,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: `
+## When to use
+- Selecting one or more independent options from a list
+- Boolean settings that take effect on form submission (not immediately)
+- "Select all" patterns with indeterminate state for partial selection
+
+## When NOT to use
+- Mutually exclusive options (use Radio — only one can be selected)
+- Immediate on/off settings (use Switch — effect is instant)
+- More than ~7 options in a list (consider a multi-select instead)
+
+## Best practices
+- Group related checkboxes under a shared legend or label
+- Use \`indeterminate\` to represent partial selection in "select all" patterns
+- Keep labels concise — ideally one line
+- Align checkboxes vertically for easier scanning
+
+## Accessibility
+- Each checkbox must have an associated \`label\`
+- Use \`aria-describedby\` for helper text and error messages
+- The indeterminate state must be set programmatically — it is not a native HTML attribute value
+        `,
+      },
+    },
+  },
   argTypes: {
     size: { control: 'select', options: ['sm', 'md'] },
     disabled: { control: 'boolean' },

@@ -34,6 +34,35 @@ const meta: Meta<typeof Input> = {
   title: 'Foundation/Input',
   component: Input,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: `
+## When to use
+- Single-line text entry: names, emails, passwords, search queries
+- Any free-form data that doesn't fit a constrained set of options
+- Authentication forms and structured data entry
+
+## When NOT to use
+- Multi-line content (use Textarea)
+- Selecting from a list of options (use Select or Radio)
+- Boolean on/off settings (use Switch or Checkbox)
+
+## Best practices
+- Always include a visible label — never rely on placeholder text alone
+- Use helper text to hint at expected format (e.g., "email@example.com")
+- Make error messages specific and actionable ("Email is invalid", not "Error")
+- Prefer \`inputSize="md"\` as the default; use \`sm\` for dense UIs, \`lg\` for prominent forms
+
+## Accessibility
+- Link label via \`htmlFor\` matching the input \`id\`
+- Use \`aria-describedby\` to associate helper text and error messages
+- Set \`aria-invalid="true"\` when in an error state
+- Do not remove the focus ring styling
+        `,
+      },
+    },
+  },
   argTypes: {
     inputSize: {
       control: 'select',

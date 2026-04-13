@@ -11,7 +11,9 @@ export interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
   level?: HeadingLevel
   /** Override the visual size independently of the semantic level */
   size?: HeadingSize
+  /** Font weight */
   weight?: HeadingWeight
+  /** Semantic color — use `muted` or `subtle` for de-emphasized headings */
   color?: HeadingColor
   /** Override the rendered element (e.g. render an h1 visually as an h3) */
   as?: HeadingAs

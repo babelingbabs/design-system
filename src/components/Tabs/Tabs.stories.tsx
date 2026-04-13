@@ -9,6 +9,32 @@ const meta: Meta<typeof Tabs> = {
   tags: ['autodocs'],
   parameters: {
     layout: 'padded',
+    docs: {
+      description: {
+        component: `
+## When to use
+- Organizing related content into sections within a single view
+- Switching between views where only one view needs to be visible at a time
+- Feature panels, settings pages, or content category navigation
+
+## When NOT to use
+- Multi-step forms where order matters (use a stepper/wizard)
+- Navigation between separate pages (use a nav link)
+- More than ~7 tabs — consider a Select or secondary nav instead
+
+## Best practices
+- Use \`variant="underline"\` for primary navigation; \`variant="pill"\` for secondary filters
+- Tabs should not trigger form submissions — they are for navigation, not actions
+- Default to a meaningful starting tab; persist selection where appropriate
+- Keep tab labels concise: 1–2 words
+
+## Accessibility
+- Renders with \`role="tablist"\`, \`role="tab"\`, and \`role="tabpanel"\` via Radix UI
+- Active tab has \`aria-selected="true"\`
+- Arrow keys navigate between tabs; Tab moves focus into the active panel
+        `,
+      },
+    },
   },
 }
 

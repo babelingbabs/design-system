@@ -5,6 +5,33 @@ const meta: Meta<typeof Textarea> = {
   title: 'Forms/Textarea',
   component: Textarea,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: `
+## When to use
+- Multi-line text entry: comments, descriptions, messages, notes
+- Any input where the user needs to write more than one sentence
+- Structured long-form content like addresses or bios
+
+## When NOT to use
+- Single-line input (use Input)
+- Rich text editing with formatting (use a dedicated rich text editor)
+
+## Best practices
+- Set \`rows\` to reflect the expected content length — 3 for short notes, 6+ for longer content
+- Use \`showCount\` with \`maxLength\` to help users understand limits
+- Default to \`resize="vertical"\` — users may need more space; horizontal resize often breaks layouts
+- Avoid \`resize="both"\` or \`resize="horizontal"\` in responsive layouts
+
+## Accessibility
+- Link label via \`htmlFor\` matching the textarea \`id\`
+- Use \`aria-describedby\` for helper text and character counts
+- Set \`aria-invalid="true"\` when in error state
+        `,
+      },
+    },
+  },
   argTypes: {
     resize: { control: 'select', options: ['none', 'vertical', 'horizontal', 'both'] },
     disabled: { control: 'boolean' },

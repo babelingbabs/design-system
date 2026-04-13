@@ -6,6 +6,34 @@ const meta: Meta<typeof RadioGroup> = {
   title: 'Forms/Radio',
   component: RadioGroup,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: `
+## When to use
+- Selecting exactly one option from a short list (2–5 options)
+- Settings where seeing all options at once aids decision-making
+- Mutually exclusive choices that cannot be combined
+
+## When NOT to use
+- Multiple selections (use Checkbox)
+- More than 5 options (use Select — it's more compact)
+- Immediate-effect toggles (use Switch)
+
+## Best practices
+- Always use Radio inside a RadioGroup for proper name/value handling
+- Provide a default selection when there's a clear recommended option
+- Lay out options vertically for readability; use horizontal only for 2–3 very short labels
+- Never nest RadioGroups
+
+## Accessibility
+- RadioGroup renders a \`fieldset\` with \`legend\` for screen readers
+- Arrow keys navigate between radios within a group — do not override this behavior
+- Ensure the group label is visible, not just a \`title\` attribute
+        `,
+      },
+    },
+  },
   argTypes: {
     direction: { control: 'select', options: ['vertical', 'horizontal'] },
     disabled: { control: 'boolean' },

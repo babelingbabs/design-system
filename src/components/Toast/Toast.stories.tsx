@@ -7,6 +7,32 @@ const meta: Meta = {
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component: `
+## When to use
+- Brief confirmation that an action completed ("Saved", "Copied to clipboard")
+- Non-critical warnings or informational messages that don't block the user
+- Background task updates (upload complete, sync finished)
+
+## When NOT to use
+- Persistent errors that require user action (use Alert)
+- Blocking confirmations that require a decision (use Dialog)
+- Messages with more than one sentence of context (use Alert instead)
+
+## Best practices
+- Keep toast messages to a single short sentence
+- Default duration (5s) is appropriate for most cases; use longer for important warnings
+- Avoid queuing more than 3 toasts simultaneously — batch them or use an Alert
+- Do not rely on toasts for critical error reporting
+
+## Accessibility
+- Uses \`role="status"\` with \`aria-live="polite"\` for non-critical announcements
+- Error toasts use \`aria-live="assertive"\` for immediate announcement
+- Toast messages are announced to screen readers without moving focus
+        `,
+      },
+    },
   },
   decorators: [
     (Story) => (

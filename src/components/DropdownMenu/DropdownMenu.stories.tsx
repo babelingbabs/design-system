@@ -29,6 +29,32 @@ const meta: Meta<typeof DropdownMenuContent> = {
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component: `
+## When to use
+- Showing a list of actions related to a single trigger (more options, kebab menu)
+- Navigation or command menus triggered from a button or avatar
+- Grouping multiple related actions to reduce UI clutter
+
+## When NOT to use
+- Selecting a value to persist in a form field (use Select)
+- Showing a panel with form controls (use Popover)
+- Navigation that should always be visible (use Tabs or a sidebar)
+
+## Best practices
+- Group related actions with \`DropdownMenuSeparator\` and \`DropdownMenuLabel\`
+- Show keyboard shortcuts via the \`shortcut\` prop on items
+- Place destructive actions last in the menu
+- Keep menu items to ~7 or fewer for scannability
+
+## Accessibility
+- Renders with \`role="menu"\` and \`role="menuitem"\` via Radix UI
+- Arrow keys navigate between items; Enter/Space activates
+- Pressing Escape closes the menu and returns focus to the trigger
+        `,
+      },
+    },
   },
 }
 

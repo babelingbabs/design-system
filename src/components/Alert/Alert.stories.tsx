@@ -7,6 +7,32 @@ const meta: Meta<typeof Alert> = {
   tags: ['autodocs'],
   parameters: {
     layout: 'padded',
+    docs: {
+      description: {
+        component: `
+## When to use
+- Communicating persistent status messages that relate to a page or section
+- System feedback after an operation: success, warning, or error states
+- Informational notices that users should be aware of before proceeding
+
+## When NOT to use
+- Ephemeral feedback for quick user actions (use Toast)
+- Blocking decisions that require immediate action (use Dialog)
+- Inline field validation (use the input's \`error\` prop)
+
+## Best practices
+- Match variant to semantic meaning: \`error\` for blocking problems, \`warning\` for risks, \`success\` for completion, \`info\` for neutral notices
+- Make alerts closable (\`closable\`) only when the information is optional or already addressed
+- Place alerts at the top of the relevant content area, not buried mid-page
+- Keep alert text concise; link out for additional detail
+
+## Accessibility
+- \`role="alert"\` is applied automatically for error and warning variants — screen readers announce immediately
+- Avoid auto-dismissing alerts that convey important error information
+- Ensure dismiss buttons have an accessible label
+        `,
+      },
+    },
   },
 }
 

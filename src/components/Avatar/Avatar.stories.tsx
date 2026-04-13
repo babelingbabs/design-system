@@ -5,7 +5,34 @@ const meta: Meta<typeof Avatar> = {
   title: 'Components/Avatar',
   component: Avatar,
   tags: ['autodocs'],
-  parameters: { layout: 'centered' },
+  parameters: {
+    layout: 'centered',
+    docs: {
+      description: {
+        component: `
+## When to use
+- Representing a user or entity with an image, initials, or icon
+- Profile headers, comment threads, mention lists, team rosters
+- AvatarGroup for showing multiple users in a compact stack
+
+## When NOT to use
+- Generic icons or illustrations (use an icon component)
+- Logos or brand marks (use an image directly)
+
+## Best practices
+- Provide both \`src\` and \`name\` — name is used for alt text and initials fallback
+- Fallback chain: image → initials (from \`name\`) → \`fallbackIcon\` → generic icon
+- Use consistent sizes within the same context; \`md\` is the default
+- In AvatarGroup, set \`max\` to limit visible avatars and show a "+N" overflow
+
+## Accessibility
+- Provide meaningful \`alt\` text for user avatars (e.g., "Jane Doe's avatar")
+- When used decoratively alongside the user's name, \`alt=""\` is acceptable
+- AvatarGroup overflow count is rendered as visible text for screen readers
+        `,
+      },
+    },
+  },
 }
 
 export default meta

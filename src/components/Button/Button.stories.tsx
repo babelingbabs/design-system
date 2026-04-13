@@ -29,6 +29,35 @@ const meta: Meta<typeof Button> = {
   title: 'Foundation/Button',
   component: Button,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: `
+## When to use
+- Primary actions that require user confirmation or trigger operations
+- Form submissions and CTAs (calls to action)
+- Operations that change system state (save, delete, publish)
+
+## When NOT to use
+- Navigation between pages (use a link instead)
+- Minor or secondary actions in dense UIs (consider ghost variant)
+- When you need more than one primary button in a section
+
+## Best practices
+- Use one primary button per section to establish clear hierarchy
+- Add a loading state for async operations to prevent double-submission
+- Use leading icons to add context; avoid icons without text unless icon-only
+- Label buttons with verbs that describe the action ("Save changes", not "OK")
+
+## Accessibility
+- Provide \`aria-label\` for icon-only buttons
+- Set \`aria-busy="true"\` when loading
+- Avoid disabling buttons without a visible explanation of why
+- Ensure sufficient color contrast for all variants
+        `,
+      },
+    },
+  },
   argTypes: {
     variant: {
       control: 'select',

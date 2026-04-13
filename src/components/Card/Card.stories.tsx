@@ -9,6 +9,32 @@ const meta: Meta<typeof Card> = {
   tags: ['autodocs'],
   parameters: {
     layout: 'padded',
+    docs: {
+      description: {
+        component: `
+## When to use
+- Grouping related content that belongs together (article preview, product listing)
+- Clickable content blocks that navigate or trigger an action
+- Layouts that combine media, text, and actions
+
+## When NOT to use
+- Simple sections of plain text (use Stack or a semantic container)
+- Full-width banners or hero sections
+- Deeply nested cards — limit to one level of nesting
+
+## Best practices
+- Keep padding consistent across cards in the same layout
+- Only add hover state (\`hoverable\`) when the entire card is interactive
+- Use the \`media\` slot for edge-to-edge images; avoid adding padding around media
+- Establish consistent card hierarchy using appropriate heading levels
+
+## Accessibility
+- If the card is clickable, make the entire card the click target — avoid nesting a link inside a link
+- Use appropriate heading levels (\`h2\`, \`h3\`, etc.) inside cards to maintain document outline
+- Ensure interactive cards are keyboard-focusable and have a visible focus ring
+        `,
+      },
+    },
   },
   argTypes: {
     variant: {

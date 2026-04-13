@@ -20,6 +20,34 @@ const meta: Meta<typeof Select> = {
   title: 'Forms/Select',
   component: Select,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: `
+## When to use
+- Choosing one option from a list of 5+ items
+- When screen space is constrained and a full Radio list would be too long
+- Standard browser-native dropdown when custom styling isn't required
+
+## When NOT to use
+- Fewer than 5 options (use Radio for better visibility)
+- Multi-select scenarios (use a custom multi-select component)
+- When you need rich option content like icons or descriptions (use DropdownMenu)
+
+## Best practices
+- Always include a neutral placeholder ("Select one…")
+- Sort options logically: alphabetically, by frequency, or by natural order
+- Always provide a \`label\` — never rely on placeholder alone
+- For very long lists, consider grouping or filtering
+
+## Accessibility
+- The native \`<select>\` has excellent built-in keyboard and screen reader support
+- Associate label via \`htmlFor\` and input \`id\`
+- Disabled options remain readable by screen readers
+        `,
+      },
+    },
+  },
   argTypes: {
     size: { control: 'select', options: ['sm', 'md', 'lg'] },
     disabled: { control: 'boolean' },

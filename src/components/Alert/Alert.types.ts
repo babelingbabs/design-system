@@ -13,5 +13,6 @@ export interface AlertProps {
   closable?: boolean
   /** Called when the dismiss button is clicked */
   onClose?: () => void
+  /** Additional CSS class names */
   className?: string
 }

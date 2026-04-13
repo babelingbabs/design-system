@@ -5,7 +5,34 @@ const meta: Meta<typeof Stack> = {
   title: 'Layout/Stack',
   component: Stack,
   tags: ['autodocs'],
-  parameters: { layout: 'padded' },
+  parameters: {
+    layout: 'padded',
+    docs: {
+      description: {
+        component: `
+## When to use
+- One-dimensional layouts: a row or column of elements with consistent spacing
+- Building form layouts, button groups, navigation rows, and content stacks
+- Replacing ad-hoc margin/flexbox patterns with a composable primitive
+
+## When NOT to use
+- Two-dimensional grid layouts (use CSS Grid directly)
+- Full-page structural layouts (use Container)
+- Complex responsive layouts that need different stacking at breakpoints (compose multiple Stacks)
+
+## Best practices
+- Use \`direction="vertical"\` (default) for stacked forms and content; \`direction="horizontal"\` for toolbars and inline groups
+- Use the \`gap\` scale from the spacing token system — avoid mixing Stack with raw margins on children
+- Use \`as="ul"\` / \`as="ol"\` when rendering lists to preserve semantic HTML
+- Set \`wrap\` on horizontal stacks to prevent overflow on small screens
+
+## Accessibility
+- Choose \`as\` to match content semantics: \`nav\`, \`ul\`, \`section\`, etc.
+- Gap and alignment are purely visual — ensure the DOM order is logical for screen readers
+        `,
+      },
+    },
+  },
 }
 
 export default meta

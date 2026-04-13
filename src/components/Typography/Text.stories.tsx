@@ -5,6 +5,33 @@ const meta: Meta<typeof Text> = {
   title: 'Typography/Text',
   component: Text,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: `
+## When to use
+- Body copy, captions, labels, and any prose content
+- Inline text spans that need semantic styling (muted, accent, error)
+- Short or long descriptive content within layouts
+
+## When NOT to use
+- Page or section titles (use Heading)
+- Form labels (use Label)
+- Code samples (use Code)
+
+## Best practices
+- Default to \`size="base"\` for body text; use \`size="sm"\` for captions and helper text
+- Use the \`as\` prop to match semantics: \`p\` for paragraphs, \`span\` for inline, \`div\` for block containers
+- Reserve \`color="error"\` exclusively for error messaging
+- \`truncate\` is intended for single-line overflow; do not apply to multi-line text
+
+## Accessibility
+- Choose the rendered element (\`as\`) based on document semantics, not appearance
+- Avoid using color as the only differentiator; pair color changes with other visual cues
+        `,
+      },
+    },
+  },
   argTypes: {
     size: { control: 'select', options: ['xs', 'sm', 'base', 'lg', 'xl'] },
     weight: { control: 'select', options: ['regular', 'medium', 'semibold', 'bold'] },

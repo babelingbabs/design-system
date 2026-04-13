@@ -5,6 +5,33 @@ const meta: Meta<typeof Label> = {
   title: 'Typography/Label',
   component: Label,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: `
+## When to use
+- Labeling form controls: inputs, selects, checkboxes, radios, switches
+- Required field indicators (asterisk) via the \`required\` prop
+- Any text that explicitly associates with a form element via \`htmlFor\`
+
+## When NOT to use
+- Section headings (use Heading)
+- General body text (use Text)
+- Decorative text with no form association
+
+## Best practices
+- Always link labels to their control via \`htmlFor\` matching the input's \`id\`
+- Use \`required\` to visually mark mandatory fields — pair with server-side validation
+- Mirror the input's \`disabled\` state with \`disabled={true}\` on the label
+
+## Accessibility
+- A properly associated label is the most important accessibility practice for forms
+- The \`for\`/\`htmlFor\` attribute creates a programmatic link that screen readers announce
+- Placeholder text is NOT a substitute for a visible label
+        `,
+      },
+    },
+  },
   argTypes: {
     size: { control: 'select', options: ['sm', 'md'] },
     required: { control: 'boolean' },

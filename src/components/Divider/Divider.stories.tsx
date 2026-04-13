@@ -5,7 +5,33 @@ const meta: Meta<typeof Divider> = {
   title: 'Layout/Divider',
   component: Divider,
   tags: ['autodocs'],
-  parameters: { layout: 'padded' },
+  parameters: {
+    layout: 'padded',
+    docs: {
+      description: {
+        component: `
+## When to use
+- Visually separating distinct sections of content within a layout
+- Breaking up long forms or settings panels into logical groups
+- Adding a labeled section break within a list or content area
+
+## When NOT to use
+- Purely decorative spacing — use padding or margin instead
+- Separating items that could be better grouped with a Stack gap
+
+## Best practices
+- Use \`orientation="horizontal"\` (default) between stacked sections
+- Use \`orientation="vertical"\` for separating inline items (e.g., toolbar actions)
+- Use the \`label\` prop to add section headers within a divider line
+- Add \`decorative={true}\` when the divider is purely visual
+
+## Accessibility
+- Set \`decorative={true}\` for purely visual dividers to hide from the accessibility tree
+- Labeled dividers (\`label\` prop) are announced as text, providing navigation context
+        `,
+      },
+    },
+  },
 }
 
 export default meta

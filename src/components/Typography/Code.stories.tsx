@@ -6,6 +6,31 @@ const meta: Meta<typeof Code> = {
   title: 'Typography/Code',
   component: Code,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: `
+## When to use
+- Displaying inline code references within prose (\`inline={true}\`)
+- Rendering code blocks and multi-line samples (\`inline={false}\`)
+- Technical documentation, API references, and changelogs
+
+## When NOT to use
+- Pre-formatted plain text that is not code (use a \`<pre>\` block directly)
+- Large code editors that require syntax highlighting or line numbers (use a dedicated library)
+
+## Best practices
+- Use \`inline={true}\` for variable names, functions, and short snippets within sentences
+- Use \`inline={false}\` (block mode) for multi-line examples — block code gets monospace styling and a background
+- Keep block code examples concise and directly relevant
+
+## Accessibility
+- Screen readers announce \`<code>\` elements — keep inline code brief
+- Block code is wrapped in \`<pre>\` which preserves whitespace; ensure it does not overflow on small viewports
+        `,
+      },
+    },
+  },
   argTypes: {
     inline: { control: 'boolean' },
     children: { control: 'text' },

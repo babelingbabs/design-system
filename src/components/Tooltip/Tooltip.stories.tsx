@@ -9,6 +9,32 @@ const meta: Meta<typeof Tooltip> = {
   tags: ['autodocs'],
   parameters: {
     layout: 'centered',
+    docs: {
+      description: {
+        component: `
+## When to use
+- Supplementary, non-essential information for UI elements (icon buttons, truncated text)
+- Surfacing keyboard shortcut hints on hover
+- Clarifying the purpose of an icon without adding permanent text to the layout
+
+## When NOT to use
+- Essential information the user needs to complete a task — put it inline
+- Interactive content like links or buttons (use Popover)
+- Long descriptions (use a Popover or helper text)
+- Mobile-first experiences where hover is unavailable
+
+## Best practices
+- Keep tooltip content under ~80 characters
+- Default side is "top" — switch to "bottom" only when top is clipped
+- Do not trigger tooltips on elements that already have a visible text label
+
+## Accessibility
+- Tooltips are triggered by both hover and keyboard focus
+- Content is announced via \`aria-describedby\` by Radix UI
+- Never place actionable elements (links, buttons) inside a tooltip
+        `,
+      },
+    },
   },
   argTypes: {
     side: {

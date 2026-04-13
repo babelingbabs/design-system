@@ -8,6 +8,33 @@ const meta: Meta<typeof FormField> = {
   title: 'Forms/FormField',
   component: FormField,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: `
+## When to use
+- Wrapping custom or third-party form controls that don't include a built-in label
+- Composing form layouts with consistent label, helper text, and error patterns
+- When you need to share label/error state across multiple related controls
+
+## When NOT to use
+- Input, Select, Checkbox, Radio, Textarea — these have built-in label props
+- Decorative or non-interactive content
+
+## Best practices
+- Always provide a \`label\` — FormField without a label leaves the control unlabeled
+- Use \`htmlFor\` to link the label to the control's \`id\`
+- Pass error text to \`error\` rather than rendering it manually inside children
+- Use \`required\` to visually mark mandatory fields
+
+## Accessibility
+- FormField renders a \`<label>\` linked to the control via \`htmlFor\`
+- Error messages are associated via \`aria-describedby\` on the wrapped control
+- The \`disabled\` prop applies muted styling but does NOT disable child controls — disable them separately
+        `,
+      },
+    },
+  },
   argTypes: {
     label: { control: 'text' },
     helperText: { control: 'text' },

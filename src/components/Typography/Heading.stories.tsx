@@ -5,6 +5,32 @@ const meta: Meta<typeof Heading> = {
   title: 'Typography/Heading',
   component: Heading,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: `
+## When to use
+- Page titles, section headings, and content hierarchy
+- Any place where heading semantics matter for screen reader navigation
+
+## When NOT to use
+- Body text or captions (use Text)
+- Decorative large type with no semantic meaning (use Text with a size override)
+
+## Best practices
+- Maintain a logical heading hierarchy — never skip levels (h1 → h3)
+- Use the \`size\` prop to adjust visual scale independently of semantic level
+- Use \`as\` only when the rendered element must differ from the semantic level for layout reasons
+- Default weights: bold for h1–h2, semibold for h3–h4
+
+## Accessibility
+- There should be exactly one h1 per page
+- Screen readers use heading levels to navigate — maintain a meaningful document outline
+- Do not use headings purely for styling; use Text with a size override instead
+        `,
+      },
+    },
+  },
   argTypes: {
     level: { control: 'select', options: [1, 2, 3, 4, 5, 6] },
     size: {

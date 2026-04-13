@@ -6,6 +6,33 @@ const meta: Meta<typeof Switch> = {
   title: 'Forms/Switch',
   component: Switch,
   tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: `
+## When to use
+- Settings that take effect immediately without a submit button (e.g., dark mode, notifications)
+- Binary on/off states in configuration panels
+- When the outcome of toggling is instantly visible
+
+## When NOT to use
+- Form fields that submit with a button (use Checkbox — Switch implies immediate effect)
+- Multiple related binary options (use a Checkbox group for clarity)
+- Complex state that requires confirmation before applying
+
+## Best practices
+- Label the switch with the feature being toggled, not "On" or "Off"
+- Place the label on the right by default; use \`labelPosition="left"\` only when aligning to a list
+- Pair with a visible status indicator if the current state needs to be explicit
+
+## Accessibility
+- Renders as a checkbox input with \`role="switch"\` semantics
+- The label must describe what the switch controls, not the current state
+- Ensure the toggle track has sufficient contrast in both on and off states
+        `,
+      },
+    },
+  },
   argTypes: {
     size: { control: 'select', options: ['sm', 'md', 'lg'] },
     labelPosition: { control: 'select', options: ['left', 'right'] },
