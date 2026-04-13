@@ -17,6 +17,22 @@ export type { TextareaProps, TextareaResize } from './components/Textarea/Textar
 export { FormField } from './components/FormField'
 export type { FormFieldProps } from './components/FormField/FormField.types'
 
+// Overlay
+export {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader,
+  DialogFooter,
+  DialogTitle,
+  DialogDescription,
+  DialogClose,
+} from './components/Dialog'
+export type { DialogProps, DialogContentProps, DialogHeaderProps, DialogFooterProps, DialogSize } from './components/Dialog/Dialog.types'
+
+export { Tooltip } from './components/Tooltip'
+export type { TooltipProps, TooltipSide, TooltipAlign } from './components/Tooltip/Tooltip.types'
+
 // Components
 export { Button } from './components/Button'
 export type { ButtonProps, ButtonVariant, ButtonSize } from './components/Button/Button.types'
