@@ -1,0 +1,124 @@
+/* ============================================
+   Avatar — CSS Module
+   ============================================ */
+
+.avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  font-family: var(--typography-font-family-sans);
+  font-weight: var(--typography-font-weight-medium);
+  user-select: none;
+}
+
+/* ---- Sizes ---- */
+.avatar[data-size='xs'] { width: 24px; height: 24px; font-size: 10px; }
+.avatar[data-size='sm'] { width: 32px; height: 32px; font-size: 12px; }
+.avatar[data-size='md'] { width: 40px; height: 40px; font-size: 14px; }
+.avatar[data-size='lg'] { width: 48px; height: 48px; font-size: 16px; }
+.avatar[data-size='xl'] { width: 64px; height: 64px; font-size: 20px; }
+
+/* ---- Shape ---- */
+.avatar[data-shape='circle'] { border-radius: var(--radius-full); }
+.avatar[data-shape='square'] { border-radius: var(--radius-md); }
+
+/* ---- Image ---- */
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---- Initials / Icon fallback ---- */
+.fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  line-height: 1;
+  color: #fff;
+}
+
+/* ---- Palette classes for initials background ---- */
+.palette0 { background-color: #6366f1; }
+.palette1 { background-color: #8b5cf6; }
+.palette2 { background-color: #ec4899; }
+.palette3 { background-color: #14b8a6; }
+.palette4 { background-color: #f59e0b; }
+.palette5 { background-color: #10b981; }
+.palette6 { background-color: #3b82f6; }
+.palette7 { background-color: #ef4444; }
+
+/* ---- Icon fallback bg ---- */
+.iconFallback {
+  background-color: var(--color-bg-subtle);
+  color: var(--color-fg-muted);
+  border: 1px solid var(--color-border-default);
+}
+
+/* ---- Status dot ---- */
+.status {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--color-bg-base);
+  flex-shrink: 0;
+}
+
+.avatar[data-size='xs'] .status { width: 7px; height: 7px; }
+.avatar[data-size='sm'] .status { width: 9px; height: 9px; }
+.avatar[data-size='md'] .status { width: 11px; height: 11px; }
+.avatar[data-size='lg'] .status { width: 12px; height: 12px; }
+.avatar[data-size='xl'] .status { width: 14px; height: 14px; }
+
+.status[data-status='online']  { background-color: var(--color-success-default); }
+.status[data-status='offline'] { background-color: var(--color-fg-subtle); }
+.status[data-status='busy']    { background-color: var(--color-error-default); }
+.status[data-status='away']    { background-color: var(--color-warning-default); }
+
+/* ---- AvatarGroup ---- */
+.group {
+  display: flex;
+  flex-direction: row;
+}
+
+.group[data-spacing='tight']  { --avatar-overlap: -8px; }
+.group[data-spacing='normal'] { --avatar-overlap: -4px; }
+
+.group .avatar,
+.group .overflow {
+  margin-left: var(--avatar-overlap, -4px);
+  border: 2px solid var(--color-bg-base);
+  box-sizing: content-box;
+}
+
+.group .avatar:first-child,
+.group .overflow:first-child {
+  margin-left: 0;
+}
+
+/* ---- Overflow badge ---- */
+.overflow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-subtle);
+  border: 2px solid var(--color-bg-base);
+  color: var(--color-fg-muted);
+  font-family: var(--typography-font-family-sans);
+  font-weight: var(--typography-font-weight-medium);
+  box-sizing: content-box;
+}
+
+.overflow[data-size='xs'] { width: 24px; height: 24px; font-size: 10px; }
+.overflow[data-size='sm'] { width: 32px; height: 32px; font-size: 11px; }
+.overflow[data-size='md'] { width: 40px; height: 40px; font-size: 12px; }
+.overflow[data-size='lg'] { width: 48px; height: 48px; font-size: 14px; }
+.overflow[data-size='xl'] { width: 64px; height: 64px; font-size: 16px; }
