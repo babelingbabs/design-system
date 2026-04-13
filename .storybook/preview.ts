@@ -13,6 +13,23 @@ const preview: Preview = {
     },
     backgrounds: { disable: true },
     layout: 'centered',
+    options: {
+      storySort: {
+        order: [
+          'Overview',
+          ['Introduction', 'Component Status', 'Design Tokens', 'Accessibility'],
+          'Foundation',
+          'Typography',
+          'Forms',
+          'Overlays',
+          'Feedback',
+          'Navigation',
+          'Layout',
+          'Data Display',
+          '*',
+        ],
+      },
+    },
   },
   decorators: [
     withThemeByDataAttribute({

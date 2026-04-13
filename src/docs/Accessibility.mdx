@@ -1,0 +1,98 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Overview/Accessibility" />
+
+# Accessibility
+
+This design system targets **WCAG 2.1 Level AA** as the minimum standard for all interactive components. Accessibility is treated as a first-class requirement — it is verified in automated tests, validated in Storybook, and baked into the component API.
+
+---
+
+## Keyboard navigation
+
+Every interactive component is fully operable by keyboard alone.
+
+| Pattern | Components | Behaviour |
+|---|---|---|
+| Tab / Shift+Tab | All interactive | Move focus forward and backward |
+| Enter / Space | Button, Checkbox, Switch, Radio | Activate |
+| Arrow keys | Radio group, Tabs, DropdownMenu, Select | Move between options |
+| Escape | Dialog, Popover, Tooltip, DropdownMenu, Toast | Dismiss |
+| Home / End | Tabs, Select | Jump to first / last item |
+
+---
+
+## Focus management
+
+Focus rings use the `--state-focus-ring-*` token set:
+
+- `--state-focus-ring-color: #6366f1` — indigo accent, visible on both light and dark themes
+- `--state-focus-ring-width: 2px`
+- `--state-focus-ring-offset: 2px`
+- `--shadow-focus-ring` — full box-shadow shorthand for interactive elements
+- `--shadow-focus-ring-error` — red ring variant for invalid form fields
+
+The `.kds-focus-ring` utility class applies these tokens consistently via `:focus-visible`. We use `:focus-visible` rather than `:focus` to avoid showing outlines on mouse interaction.
+
+For overlay components (Dialog, Popover, DropdownMenu), focus is trapped inside the overlay while open and restored to the trigger on close. This is handled by Radix UI's built-in focus management.
+
+---
+
+## Color contrast
+
+| Token pair | Ratio | Usage |
+|---|---|---|
+| `--color-fg-default` on `--color-bg-base` | ≥ 7:1 | Body text (light and dark) |
+| `--color-fg-muted` on `--color-bg-base` | ≥ 4.5:1 | Secondary text |
+| `--color-primary-fg` on `--color-primary-default` | ≥ 4.5:1 | Primary button text |
+| `--color-accent-fg` on `--color-accent-default` | ≥ 4.5:1 | Accent button text |
+| `--color-error-fg` on `--color-error-default` | ≥ 4.5:1 | Error button text |
+| `--color-success-subtle-fg` on `--color-success-subtle` | ≥ 4.5:1 | Success badge text |
+| `--color-warning-subtle-fg` on `--color-warning-subtle` | ≥ 4.5:1 | Warning badge text |
+| `--color-error-subtle-fg` on `--color-error-subtle` | ≥ 4.5:1 | Error badge text |
+
+Color is never the sole means of conveying information. Status badges pair color with text. Error states pair color with an icon and text label.
+
+---
+
+## Screen reader considerations
+
+**Semantic HTML first.** Buttons render as `<button>`, links as `<a>`, headings as `<h1>`–`<h6>`. Radix UI primitives map to the correct ARIA roles automatically.
+
+**ARIA labels on icon-only elements.** The `Button` component requires children or an `aria-label` when used with icons only.
+
+**Live regions.** `Toast` uses `role="status"` with `aria-live="polite"` for non-urgent notifications and `role="alert"` with `aria-live="assertive"` for errors, ensuring screen readers announce them without interrupting the current reading flow.
+
+**Landmark regions.** `Dialog` uses `role="dialog"` with `aria-modal="true"` and maps `aria-labelledby` to the dialog title automatically.
+
+**Hidden decorative content.** Decorative icons and dividers use `aria-hidden="true"` to prevent them being read by assistive technology.
+
+---
+
+## Disabled states
+
+Disabled components use `--state-disabled-opacity: 0.5` applied via the `disabled` attribute, not a custom class. This ensures they remain visible to assistive technology as unavailable rather than simply absent. We do not use `pointer-events: none` alone — `aria-disabled` or the native `disabled` attribute is always set.
+
+---
+
+## Testing in Storybook
+
+Every story has automated axe-core checks running in the **Accessibility** panel (bottom panel, "A" icon). The panel reports violations, incomplete checks, and passes in real time.
+
+**To test a component:**
+1. Open any component story in Storybook
+2. Click the **Accessibility** tab in the bottom panel
+3. Review violations (red) and incomplete checks (yellow)
+4. Switch themes with the toolbar to verify contrast in both light and dark
+
+**Manual checks to run alongside axe:**
+- Tab through all interactive elements and confirm logical focus order
+- Activate all controls with keyboard only (Enter, Space, Arrow keys)
+- Test with macOS VoiceOver (`Cmd+F5`) or NVDA on Windows
+- Zoom to 200% and confirm no content is cut off or overlapped
+
+---
+
+## Reporting issues
+
+If you discover an accessibility issue in any component, please file a bug with the component name, the failing WCAG criterion, and steps to reproduce.

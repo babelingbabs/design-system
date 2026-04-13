@@ -1,0 +1,79 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Overview/Introduction" />
+
+# @kingsley/design-system
+
+A portfolio-grade design system built on precision, not decoration.
+
+---
+
+## Philosophy
+
+**Precision over decoration** — Every token, spacing value, and component variant exists for a reason. Nothing is added speculatively.
+
+**Tokens are the system** — Colors, spacing, radii, shadows, motion, and states are all defined as design tokens via Style Dictionary. The components are an expression of those tokens, not the other way around.
+
+**Accessible by default** — All interactive components meet WCAG 2.1 AA. Keyboard navigation, focus management, and screen reader support are treated as requirements, not enhancements.
+
+---
+
+## Tech stack
+
+| Layer | Technology |
+|---|---|
+| Components | React 18 + TypeScript |
+| Styling | Tailwind CSS v4 + CSS Modules |
+| Headless primitives | Radix UI |
+| Animations | Framer Motion |
+| Design tokens | Style Dictionary |
+| Documentation | Storybook 8 |
+
+---
+
+## Installation
+
+```bash
+npm install @kingsley/design-system
+```
+
+---
+
+## Basic usage
+
+Wrap your app with `ThemeProvider`, then import any component:
+
+```tsx
+import { ThemeProvider } from '@kingsley/design-system'
+import { Button } from '@kingsley/design-system'
+import '@kingsley/design-system/styles'
+
+export default function App() {
+  return (
+    <ThemeProvider defaultTheme="light">
+      <Button variant="primary">Get started</Button>
+    </ThemeProvider>
+  )
+}
+```
+
+---
+
+## What's inside
+
+→ **[Component Status](?path=/docs/overview-component-status--docs)** — 27 components, all stable and WCAG AA certified
+
+→ **[Design Tokens](?path=/docs/overview-design-tokens--docs)** — Color, typography, spacing, radius, shadow, motion, and state tokens
+
+→ **[Accessibility](?path=/docs/overview-accessibility--docs)** — Our commitment, keyboard patterns, focus management, and testing guide
+
+---
+
+## Explore components
+
+Use the sidebar to browse components by category. Each component page includes:
+
+- Live interactive playground with controls
+- All variants documented
+- Accessibility information
+- Automated axe-core checks in the **Accessibility** panel
