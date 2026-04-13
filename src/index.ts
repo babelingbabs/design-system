@@ -102,6 +102,22 @@ export type { CodeProps } from './components/Typography/Code.types'
 export { Label } from './components/Typography/Label'
 export type { LabelProps, LabelSize } from './components/Typography/Label.types'
 
+// Sprint 4 — Layout & Navigation primitives
+export { Stack } from './components/Stack'
+export type { StackProps, StackDirection, StackAlign, StackJustify, StackGap, StackAs } from './components/Stack/Stack.types'
+
+export { Container } from './components/Container'
+export type { ContainerProps, ContainerSize, ContainerAs } from './components/Container/Container.types'
+
+export { Divider } from './components/Divider'
+export type { DividerProps, DividerOrientation, DividerSpacing } from './components/Divider/Divider.types'
+
+export { Avatar, AvatarGroup } from './components/Avatar'
+export type { AvatarProps, AvatarSize, AvatarShape, AvatarStatus, AvatarGroupProps, AvatarGroupSpacing } from './components/Avatar/Avatar.types'
+
+export { Breadcrumbs, BreadcrumbItem } from './components/Breadcrumbs'
+export type { BreadcrumbsProps, BreadcrumbItemProps } from './components/Breadcrumbs/Breadcrumbs.types'
+
 // Providers
 export { ThemeProvider } from './providers/ThemeProvider'
 export type { ThemeProviderProps } from './providers/ThemeProvider'

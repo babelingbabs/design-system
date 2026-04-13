@@ -1,0 +1,63 @@
+/* ============================================
+   Breadcrumbs — CSS Module
+   ============================================ */
+
+.nav {
+  font-family: var(--typography-font-family-sans);
+  font-size: var(--typography-font-size-sm);
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--spacing-1);
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-1);
+}
+
+/* ---- Items ---- */
+.item {
+  color: var(--color-fg-muted);
+  line-height: var(--typography-line-height-normal);
+  white-space: nowrap;
+}
+
+.link {
+  color: var(--color-fg-muted);
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.link:hover {
+  color: var(--color-fg-default);
+  text-decoration: underline;
+}
+
+/* ---- Current page ---- */
+.current {
+  color: var(--color-fg-default);
+  font-weight: var(--typography-font-weight-medium);
+}
+
+/* ---- Separator ---- */
+.separator {
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-fg-subtle);
+  flex-shrink: 0;
+}
+
+/* ---- Ellipsis (collapsed middle items) ---- */
+.ellipsis {
+  color: var(--color-fg-muted);
+  padding: 0 var(--spacing-1);
+  user-select: none;
+}
