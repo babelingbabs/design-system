@@ -1,0 +1,161 @@
+/* ============================================
+   Radio + RadioGroup — CSS Module
+   ============================================ */
+
+/* ---- Group ---- */
+.group {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  font-family: var(--typography-font-family-sans);
+  /* Reset fieldset browser defaults */
+  border: none;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+}
+
+.groupLabel {
+  font-size: var(--typography-font-size-sm);
+  font-weight: var(--typography-font-weight-medium);
+  color: var(--color-fg-default);
+  line-height: var(--typography-line-height-tight);
+}
+
+.group[data-disabled='true'] .groupLabel {
+  color: var(--color-fg-muted);
+}
+
+.items {
+  display: flex;
+  gap: var(--spacing-3);
+}
+
+.items[data-direction='vertical'] {
+  flex-direction: column;
+}
+
+.items[data-direction='horizontal'] {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+/* ---- Group helper / error ---- */
+.helper {
+  font-size: var(--typography-font-size-xs);
+  line-height: var(--typography-line-height-normal);
+  color: var(--color-fg-muted);
+  margin-top: 2px;
+}
+
+.helperError {
+  color: var(--color-error-default);
+}
+
+/* ---- Radio item ---- */
+.item {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--spacing-2);
+  cursor: pointer;
+  font-family: var(--typography-font-family-sans);
+}
+
+.item[data-disabled='true'] {
+  cursor: not-allowed;
+}
+
+/* ---- Input wrap ---- */
+.inputWrap {
+  position: relative;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 1px; /* optical alignment with label */
+}
+
+/* ---- Native radio input (visually hidden) ---- */
+.nativeInput {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  margin: 0;
+  cursor: inherit;
+  z-index: 1;
+}
+
+.nativeInput:disabled {
+  cursor: not-allowed;
+}
+
+/* ---- Custom radio circle ---- */
+.circle {
+  width: 100%;
+  height: 100%;
+  border: 1.5px solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  background-color: var(--color-bg-raised);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    border-color var(--motion-duration-fast) var(--motion-easing-ease-in-out),
+    background-color var(--motion-duration-fast) var(--motion-easing-ease-in-out);
+  pointer-events: none;
+}
+
+.circle[data-checked='true'] {
+  border-color: var(--color-accent-default);
+}
+
+.item[data-error='true'] .circle {
+  border-color: var(--color-error-default);
+}
+
+.item[data-error='true'] .circle[data-checked='true'] {
+  border-color: var(--color-error-default);
+}
+
+.item[data-disabled='true'] .circle {
+  opacity: var(--state-disabled-opacity);
+}
+
+/* Focus ring via CSS sibling combinator */
+.nativeInput:focus-visible ~ .circle {
+  outline: var(--state-focus-ring-width) solid var(--state-focus-ring-color);
+  outline-offset: var(--state-focus-ring-offset);
+}
+
+.item[data-error='true'] .nativeInput:focus-visible ~ .circle {
+  outline-color: var(--color-error-default);
+}
+
+/* ---- Animated dot ---- */
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-accent-default);
+  pointer-events: none;
+}
+
+.item[data-error='true'] .dot {
+  background-color: var(--color-error-default);
+}
+
+/* ---- Radio label ---- */
+.itemLabel {
+  font-size: var(--typography-font-size-sm);
+  font-weight: var(--typography-font-weight-medium);
+  color: var(--color-fg-default);
+  line-height: var(--typography-line-height-tight);
+  cursor: pointer;
+}
+
+.item[data-disabled='true'] .itemLabel {
+  color: var(--color-fg-muted);
+  cursor: not-allowed;
+}

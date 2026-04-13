@@ -1,0 +1,130 @@
+/* ============================================
+   Select — CSS Module
+   ============================================ */
+
+/* ---- Wrapper ---- */
+.wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  font-family: var(--typography-font-family-sans);
+}
+
+.wrapper[data-full-width='true'] {
+  width: 100%;
+}
+
+/* ---- Label ---- */
+.label {
+  font-size: var(--typography-font-size-sm);
+  font-weight: var(--typography-font-weight-medium);
+  color: var(--color-fg-default);
+  line-height: var(--typography-line-height-tight);
+}
+
+.wrapper[data-disabled='true'] .label {
+  color: var(--color-fg-muted);
+}
+
+/* ---- Select wrap (relative container for chevron) ---- */
+.selectWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* ---- Native select element ---- */
+.select {
+  width: 100%;
+  font-family: inherit;
+  appearance: none;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-raised);
+  color: var(--color-fg-default);
+  outline: none;
+  cursor: pointer;
+  transition:
+    border-color var(--motion-duration-fast) var(--motion-easing-ease-in-out);
+  /* room for the chevron */
+  padding-right: calc(var(--spacing-3) + 16px + var(--spacing-2));
+}
+
+.select:focus {
+  border-color: var(--color-border-focus);
+  outline: var(--state-focus-ring-width) solid var(--state-focus-ring-color);
+  outline-offset: var(--state-focus-ring-offset);
+}
+
+.select:disabled {
+  background-color: var(--color-bg-sunken);
+  color: var(--color-fg-muted);
+  cursor: not-allowed;
+}
+
+/* Placeholder option */
+.select[data-placeholder='true'] {
+  color: var(--color-fg-subtle);
+}
+
+/* Error state */
+.selectWrap[data-error='true'] .select {
+  border-color: var(--color-error-default);
+}
+
+.selectWrap[data-error='true'] .select:focus {
+  border-color: var(--color-error-default);
+  outline-color: var(--color-error-default);
+}
+
+/* ---- Sizes ---- */
+.select[data-size='sm'] {
+  height: 32px;
+  padding-left: var(--spacing-3);
+  font-size: var(--typography-font-size-sm);
+}
+
+.select[data-size='md'] {
+  height: 40px;
+  padding-left: var(--spacing-3);
+  font-size: var(--typography-font-size-base);
+}
+
+.select[data-size='lg'] {
+  height: 48px;
+  padding-left: var(--spacing-4);
+  font-size: var(--typography-font-size-lg);
+}
+
+/* ---- Chevron icon ---- */
+.chevron {
+  position: absolute;
+  right: var(--spacing-3);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--color-fg-muted);
+  display: flex;
+  align-items: center;
+}
+
+.wrapper[data-disabled='true'] .chevron {
+  opacity: var(--state-disabled-opacity);
+}
+
+.selectWrap[data-error='true'] .chevron {
+  color: var(--color-error-default);
+}
+
+/* ---- Helper / error text ---- */
+.helper {
+  font-size: var(--typography-font-size-xs);
+  line-height: var(--typography-line-height-normal);
+  color: var(--color-fg-muted);
+  margin-top: 2px;
+}
+
+.helperError {
+  color: var(--color-error-default);
+}
