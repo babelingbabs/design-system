@@ -1,0 +1,63 @@
+/* ============================================
+   Heading — CSS Module
+   ============================================ */
+
+.heading {
+  font-family: var(--typography-font-family-sans);
+  color: var(--color-fg-default);
+  margin: 0;
+  line-height: var(--typography-line-height-tight);
+}
+
+/* ---- Sizes ---- */
+.heading[data-size='xs'] {
+  font-size: var(--typography-font-size-xs);
+  letter-spacing: var(--typography-letter-spacing-normal);
+}
+.heading[data-size='sm'] {
+  font-size: var(--typography-font-size-sm);
+  letter-spacing: var(--typography-letter-spacing-normal);
+}
+.heading[data-size='base'] {
+  font-size: var(--typography-font-size-base);
+  letter-spacing: var(--typography-letter-spacing-normal);
+}
+.heading[data-size='lg'] {
+  font-size: var(--typography-font-size-lg);
+  letter-spacing: var(--typography-letter-spacing-normal);
+}
+.heading[data-size='xl'] {
+  font-size: var(--typography-font-size-xl);
+  letter-spacing: var(--typography-letter-spacing-tight);
+}
+.heading[data-size='2xl'] {
+  font-size: var(--typography-font-size-2xl);
+  letter-spacing: var(--typography-letter-spacing-tight);
+}
+.heading[data-size='3xl'] {
+  font-size: var(--typography-font-size-3xl);
+  letter-spacing: var(--typography-letter-spacing-tight);
+}
+.heading[data-size='4xl'] {
+  font-size: var(--typography-font-size-4xl);
+  letter-spacing: var(--typography-letter-spacing-tight);
+}
+.heading[data-size='5xl'] {
+  font-size: var(--typography-font-size-5xl);
+  letter-spacing: var(--typography-letter-spacing-tighter);
+}
+.heading[data-size='6xl'] {
+  font-size: var(--typography-font-size-6xl);
+  letter-spacing: var(--typography-letter-spacing-tighter);
+}
+
+/* ---- Weights ---- */
+.heading[data-weight='medium'] { font-weight: var(--typography-font-weight-medium); }
+.heading[data-weight='semibold'] { font-weight: var(--typography-font-weight-semibold); }
+.heading[data-weight='bold'] { font-weight: var(--typography-font-weight-bold); }
+
+/* ---- Colors ---- */
+.heading[data-color='default'] { color: var(--color-fg-default); }
+.heading[data-color='muted'] { color: var(--color-fg-muted); }
+.heading[data-color='subtle'] { color: var(--color-fg-subtle); }
+.heading[data-color='accent'] { color: var(--color-accent-default); }

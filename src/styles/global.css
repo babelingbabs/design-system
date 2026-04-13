@@ -1,0 +1,80 @@
+/* ============================================
+   Global Styles — @kingsley/design-system
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import '../tokens/generated/variables.css';
+@import 'tailwindcss';
+
+/* ---- Base reset & typography ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--typography-font-family-sans);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg-base);
+  color: var(--color-fg-default);
+  line-height: var(--typography-line-height-normal);
+  transition: background-color var(--motion-duration-normal) var(--motion-easing-ease-in-out),
+              color var(--motion-duration-normal) var(--motion-easing-ease-in-out);
+}
+
+/* ---- Focus visible ---- */
+:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus-ring);
+  border-radius: var(--radius-sm);
+}
+
+/* ---- Selection ---- */
+::selection {
+  background-color: var(--color-accent-subtle);
+  color: var(--color-accent-subtle-fg);
+}
+
+/* ---- Scrollbar (webkit) ---- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-fg-subtle);
+}
+
+/* ---- Code ---- */
+code, kbd, pre, samp {
+  font-family: var(--typography-font-family-mono);
+  font-size: 0.9em;
+}
+
+/* ---- Reusable focus ring ---- */
+/**
+ * Apply .kds-focus-ring to any interactive element.
+ * Uses state tokens: --state-focus-ring-width, --state-focus-ring-offset,
+ * and the theme-aware --color-border-focus for correct light/dark colour.
+ */
+.kds-focus-ring:focus-visible {
+  outline: var(--state-focus-ring-width) solid var(--state-focus-ring-color);
+  outline-offset: var(--state-focus-ring-offset);
+  border-radius: var(--radius-sm);
+  box-shadow: none;
+}

@@ -1,0 +1,98 @@
+/* ============================================
+   Badge — CSS Module
+   ============================================ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--typography-font-family-sans);
+  font-weight: var(--typography-font-weight-medium);
+  line-height: 1;
+  white-space: nowrap;
+  letter-spacing: var(--typography-letter-spacing-normal);
+  border-width: 1px;
+  border-style: solid;
+}
+
+/* ---- Sizes ---- */
+.badge[data-size='sm'] {
+  font-size: var(--typography-font-size-xs);
+  padding: 2px var(--spacing-2);
+  border-radius: var(--radius-full);
+  gap: 4px;
+}
+
+.badge[data-size='md'] {
+  font-size: var(--typography-font-size-sm);
+  padding: var(--spacing-1) var(--spacing-2);
+  border-radius: var(--radius-full);
+  gap: 5px;
+}
+
+/* ---- Variants ---- */
+.badge[data-variant='default'] {
+  background-color: var(--color-primary-subtle);
+  color: var(--color-primary-subtle-fg);
+  border-color: var(--color-border-default);
+}
+
+.badge[data-variant='primary'] {
+  background-color: var(--color-accent-subtle);
+  color: var(--color-accent-subtle-fg);
+  border-color: transparent;
+}
+
+.badge[data-variant='success'] {
+  background-color: var(--color-success-subtle);
+  color: var(--color-success-subtle-fg);
+  border-color: var(--color-success-border);
+}
+
+.badge[data-variant='warning'] {
+  background-color: var(--color-warning-subtle);
+  color: var(--color-warning-subtle-fg);
+  border-color: var(--color-warning-border);
+}
+
+.badge[data-variant='error'] {
+  background-color: var(--color-error-subtle);
+  color: var(--color-error-subtle-fg);
+  border-color: var(--color-error-border);
+}
+
+/* ---- Dot indicator ---- */
+.dot {
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.badge[data-size='sm'] .dot {
+  width: 5px;
+  height: 5px;
+}
+
+.badge[data-size='md'] .dot {
+  width: 6px;
+  height: 6px;
+}
+
+/* Dot colors by variant */
+.badge[data-variant='default'] .dot {
+  background-color: var(--color-fg-muted);
+}
+
+.badge[data-variant='primary'] .dot {
+  background-color: var(--color-accent-default);
+}
+
+.badge[data-variant='success'] .dot {
+  background-color: var(--color-success-default);
+}
+
+.badge[data-variant='warning'] .dot {
+  background-color: var(--color-warning-default);
+}
+
+.badge[data-variant='error'] .dot {
+  background-color: var(--color-error-default);
+}

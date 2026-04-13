@@ -1,0 +1,242 @@
+/* ============================================
+   Input — CSS Module
+   ============================================ */
+
+/* ---- Wrapper ---- */
+.wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--spacing-1);
+  font-family: var(--typography-font-family-sans);
+}
+
+.wrapper[data-full-width='true'] {
+  width: 100%;
+}
+
+/* ---- Label ---- */
+.label {
+  font-size: var(--typography-font-size-sm);
+  font-weight: var(--typography-font-weight-medium);
+  color: var(--color-fg-default);
+  line-height: var(--typography-line-height-tight);
+}
+
+.wrapper[data-disabled='true'] .label {
+  color: var(--color-fg-muted);
+}
+
+/* ---- Row (input + addons) ---- */
+.row {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* ---- Addon ---- */
+.addon {
+  display: flex;
+  align-items: center;
+  padding: 0 var(--spacing-3);
+  color: var(--color-fg-muted);
+  background-color: var(--color-bg-sunken);
+  border: 1px solid var(--color-border-default);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.row[data-error='true'] .addon {
+  border-color: var(--color-error-border);
+}
+
+.addonLeading {
+  border-right: none;
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+
+.addonTrailing {
+  border-left: none;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+/* ---- Input wrap (relative container for icons) ---- */
+.inputWrap {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* ---- Input element ---- */
+.input {
+  width: 100%;
+  font-family: inherit;
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-raised);
+  color: var(--color-fg-default);
+  outline: none;
+  transition:
+    border-color var(--motion-duration-fast) var(--motion-easing-ease-in-out),
+    box-shadow var(--motion-duration-fast) var(--motion-easing-ease-in-out);
+  cursor: text;
+}
+
+.input:focus {
+  border-color: var(--color-border-focus);
+  outline: var(--state-focus-ring-width) solid var(--state-focus-ring-color);
+  outline-offset: var(--state-focus-ring-offset);
+  box-shadow: none;
+}
+
+.input:disabled {
+  background-color: var(--color-bg-sunken);
+  color: var(--color-fg-muted);
+  cursor: not-allowed;
+}
+
+/* Error state */
+.row[data-error='true'] .input {
+  border-color: var(--color-error-default);
+}
+
+.row[data-error='true'] .input:focus {
+  border-color: var(--color-error-default);
+  outline: var(--state-focus-ring-width) solid var(--color-error-default);
+  outline-offset: var(--state-focus-ring-offset);
+  box-shadow: none;
+}
+
+/* Border radius with addons */
+.row[data-has-leading-addon='true'] .input {
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.row[data-has-trailing-addon='true'] .input {
+  border-radius: var(--radius-md) 0 0 var(--radius-md);
+}
+
+.row[data-has-leading-addon='true'][data-has-trailing-addon='true'] .input {
+  border-radius: 0;
+}
+
+/* ---- Sizes ---- */
+.inputWrap[data-size='sm'] .input {
+  height: 32px;
+  padding: 0 var(--spacing-3);
+  font-size: var(--typography-font-size-sm);
+}
+
+.inputWrap[data-size='md'] .input {
+  height: 40px;
+  padding: 0 var(--spacing-3);
+  font-size: var(--typography-font-size-base);
+}
+
+.inputWrap[data-size='lg'] .input {
+  height: 48px;
+  padding: 0 var(--spacing-4);
+  font-size: var(--typography-font-size-lg);
+}
+
+/* Also size the addons */
+.inputWrap[data-size='sm'] ~ .addonTrailing,
+.row[data-size='sm'] .addon {
+  height: 32px;
+  font-size: var(--typography-font-size-sm);
+}
+
+.inputWrap[data-size='md'] ~ .addonTrailing,
+.row[data-size='md'] .addon {
+  height: 40px;
+  font-size: var(--typography-font-size-base);
+}
+
+.inputWrap[data-size='lg'] ~ .addonTrailing,
+.row[data-size='lg'] .addon {
+  height: 48px;
+  font-size: var(--typography-font-size-lg);
+}
+
+/* ---- Icon padding adjustments ---- */
+/* sm: iconInset=8px, iconSize=14px → padding-adjust = 8 + 14 + 8 = 30px */
+.inputWrap[data-size='sm'][data-has-leading='true'] .input {
+  padding-left: calc(var(--spacing-2) + 14px + var(--spacing-2));
+}
+.inputWrap[data-size='sm'][data-has-trailing='true'] .input {
+  padding-right: calc(var(--spacing-2) + 14px + var(--spacing-2));
+}
+
+/* md: iconInset=12px, iconSize=16px → 12 + 16 + 8 = 36px */
+.inputWrap[data-size='md'][data-has-leading='true'] .input {
+  padding-left: calc(var(--spacing-3) + 16px + var(--spacing-2));
+}
+.inputWrap[data-size='md'][data-has-trailing='true'] .input {
+  padding-right: calc(var(--spacing-3) + 16px + var(--spacing-2));
+}
+
+/* lg: iconInset=12px, iconSize=18px → 12 + 18 + 8 = 38px */
+.inputWrap[data-size='lg'][data-has-leading='true'] .input {
+  padding-left: calc(var(--spacing-3) + 18px + var(--spacing-2));
+}
+.inputWrap[data-size='lg'][data-has-trailing='true'] .input {
+  padding-right: calc(var(--spacing-3) + 18px + var(--spacing-2));
+}
+
+/* ---- Icons ---- */
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+  color: var(--color-fg-muted);
+}
+
+.row[data-error='true'] .icon {
+  color: var(--color-error-default);
+}
+
+/* Icon sizing by inputWrap data-size */
+.inputWrap[data-size='sm'] .icon {
+  width: 14px;
+  height: 14px;
+}
+.inputWrap[data-size='md'] .icon {
+  width: 16px;
+  height: 16px;
+}
+.inputWrap[data-size='lg'] .icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Icon inset positions */
+.iconLeading {
+  left: var(--spacing-2); /* sm default; overridden below */
+}
+.iconTrailing {
+  right: var(--spacing-2);
+}
+
+.inputWrap[data-size='md'] .iconLeading,
+.inputWrap[data-size='lg'] .iconLeading {
+  left: var(--spacing-3);
+}
+.inputWrap[data-size='md'] .iconTrailing,
+.inputWrap[data-size='lg'] .iconTrailing {
+  right: var(--spacing-3);
+}
+
+/* ---- Helper / error text ---- */
+.helper {
+  font-size: var(--typography-font-size-xs);
+  line-height: var(--typography-line-height-normal);
+  color: var(--color-fg-muted);
+  margin-top: 2px;
+}
+
+.helperError {
+  color: var(--color-error-default);
+}

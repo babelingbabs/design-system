@@ -1,0 +1,31 @@
+/* ============================================
+   Label — CSS Module
+   ============================================ */
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-1);
+  font-family: var(--typography-font-family-sans);
+  font-weight: var(--typography-font-weight-medium);
+  color: var(--color-fg-default);
+  line-height: var(--typography-line-height-tight);
+  cursor: default;
+}
+
+/* ---- Sizes ---- */
+.label[data-size='sm'] { font-size: var(--typography-font-size-xs); }
+.label[data-size='md'] { font-size: var(--typography-font-size-sm); }
+
+/* ---- Disabled ---- */
+.label[data-disabled='true'] {
+  color: var(--color-fg-muted);
+  cursor: not-allowed;
+}
+
+/* ---- Required asterisk ---- */
+.asterisk {
+  color: var(--color-error-default);
+  line-height: 1;
+  user-select: none;
+}

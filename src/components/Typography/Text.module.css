@@ -1,0 +1,42 @@
+/* ============================================
+   Text — CSS Module
+   ============================================ */
+
+.text {
+  font-family: var(--typography-font-family-sans);
+  line-height: var(--typography-line-height-normal);
+  color: var(--color-fg-default);
+}
+
+/* ---- Truncate ---- */
+.text[data-truncate='true'] {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+/* ---- Sizes ---- */
+.text[data-size='xs'] { font-size: var(--typography-font-size-xs); }
+.text[data-size='sm'] { font-size: var(--typography-font-size-sm); }
+.text[data-size='base'] { font-size: var(--typography-font-size-base); }
+.text[data-size='lg'] { font-size: var(--typography-font-size-lg); }
+.text[data-size='xl'] { font-size: var(--typography-font-size-xl); }
+
+/* ---- Weights ---- */
+.text[data-weight='regular'] { font-weight: var(--typography-font-weight-regular); }
+.text[data-weight='medium'] { font-weight: var(--typography-font-weight-medium); }
+.text[data-weight='semibold'] { font-weight: var(--typography-font-weight-semibold); }
+.text[data-weight='bold'] { font-weight: var(--typography-font-weight-bold); }
+
+/* ---- Colors ---- */
+.text[data-color='default'] { color: var(--color-fg-default); }
+.text[data-color='muted'] { color: var(--color-fg-muted); }
+.text[data-color='subtle'] { color: var(--color-fg-subtle); }
+.text[data-color='accent'] { color: var(--color-accent-default); }
+.text[data-color='error'] { color: var(--color-error-default); }
+
+/* ---- Alignment ---- */
+.text[data-align='left'] { text-align: left; }
+.text[data-align='center'] { text-align: center; }
+.text[data-align='right'] { text-align: right; }

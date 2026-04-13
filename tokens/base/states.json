@@ -1,0 +1,47 @@
+{
+  "state": {
+    "hover": {
+      "overlay-subtle": {
+        "$type": "number",
+        "$value": 0.04,
+        "$description": "Subtle hover overlay opacity — use as opacity over a surface"
+      },
+      "overlay-medium": {
+        "$type": "number",
+        "$value": 0.08,
+        "$description": "Medium hover overlay opacity — use as opacity over a surface"
+      }
+    },
+    "focus": {
+      "ring-color": {
+        "$type": "color",
+        "$value": "{color.primitive.indigo.500}",
+        "$description": "Focus ring color — primary accent (indigo)"
+      },
+      "ring-width": {
+        "$type": "dimension",
+        "$value": "2px",
+        "$description": "Focus ring outline width"
+      },
+      "ring-offset": {
+        "$type": "dimension",
+        "$value": "2px",
+        "$description": "Focus ring offset from the element edge"
+      }
+    },
+    "active": {
+      "opacity": {
+        "$type": "number",
+        "$value": 0.9,
+        "$description": "Opacity applied to active/pressed interactive elements"
+      }
+    },
+    "disabled": {
+      "opacity": {
+        "$type": "number",
+        "$value": 0.5,
+        "$description": "Opacity applied to disabled interactive elements"
+      }
+    }
+  }
+}

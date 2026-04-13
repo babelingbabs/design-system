@@ -1,0 +1,78 @@
+/* ============================================
+   Card — CSS Module
+   ============================================ */
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  font-family: var(--typography-font-family-sans);
+  transition:
+    box-shadow var(--motion-duration-normal) var(--motion-easing-ease-out),
+    border-color var(--motion-duration-normal) var(--motion-easing-ease-out);
+}
+
+/* ---- Variants ---- */
+.card[data-variant='border'] {
+  background-color: var(--color-bg-raised);
+  border: 1px solid var(--color-border-default);
+  box-shadow: none;
+}
+
+.card[data-variant='shadow'] {
+  background-color: var(--color-bg-raised);
+  border: 1px solid var(--color-border-default);
+  box-shadow: var(--shadow-md);
+}
+
+.card[data-variant='ghost'] {
+  background-color: transparent;
+  border: 1px solid transparent;
+  box-shadow: none;
+}
+
+/* ---- Hoverable ---- */
+.card[data-hoverable='true'] {
+  cursor: pointer;
+}
+
+/* ---- Sections ---- */
+.media {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--spacing-3);
+}
+
+.body {
+  flex: 1;
+}
+
+.footer {
+  border-top: 1px solid var(--color-border-default);
+  margin-top: auto;
+}
+
+/* ---- Padding variants ---- */
+.card[data-padding='none'] .header { padding: 0; }
+.card[data-padding='none'] .body   { padding: 0; }
+.card[data-padding='none'] .footer { padding: 0; border-top: none; }
+
+.card[data-padding='sm'] .header { padding: var(--spacing-3) var(--spacing-3) 0; }
+.card[data-padding='sm'] .body   { padding: var(--spacing-3); }
+.card[data-padding='sm'] .footer { padding: var(--spacing-3); }
+
+.card[data-padding='md'] .header { padding: var(--spacing-5) var(--spacing-5) 0; }
+.card[data-padding='md'] .body   { padding: var(--spacing-5); }
+.card[data-padding='md'] .footer { padding: var(--spacing-5); }
+
+.card[data-padding='lg'] .header { padding: var(--spacing-6) var(--spacing-6) 0; }
+.card[data-padding='lg'] .body   { padding: var(--spacing-6); }
+.card[data-padding='lg'] .footer { padding: var(--spacing-6); }
