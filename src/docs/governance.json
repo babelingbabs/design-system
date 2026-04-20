@@ -1,0 +1,665 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-04-20",
+  "description": "Machine-readable governance rules for the design system. Used by AI agents and validation tooling to enforce correct component usage, token discipline, and accessibility standards.",
+
+  "principles": [
+    {
+      "id": "token-first",
+      "title": "Token-First, Always",
+      "rule": "Every visual property must come from a CSS custom property in variables.css. Raw hex values, pixel values, and hardcoded font sizes are forbidden in component code.",
+      "severity": "error"
+    },
+    {
+      "id": "semantic-over-presentational",
+      "title": "Semantic Over Presentational",
+      "rule": "Choose tokens and variants based on semantic meaning, not visual appearance. Use variant='error' because the state is an error, not because red looks good.",
+      "severity": "error"
+    },
+    {
+      "id": "component-before-custom",
+      "title": "Component Before Custom",
+      "rule": "If a design system component covers the use case, use it. Do not build custom equivalents or style raw HTML elements when a component exists.",
+      "severity": "error"
+    },
+    {
+      "id": "composition-within-rules",
+      "title": "Composition Within Rules",
+      "rule": "Components have defined parent/child relationships documented in the component registry. Do not compose components outside these rules.",
+      "severity": "warning"
+    },
+    {
+      "id": "accessibility-non-negotiable",
+      "title": "Accessibility Is Non-Negotiable",
+      "rule": "All interactive components must meet WCAG 2.1 AA. Do not remove focus rings, skip heading levels, omit labels, or override ARIA attributes.",
+      "severity": "error"
+    }
+  ],
+
+  "tokenRules": {
+    "required": [
+      {
+        "category": "color",
+        "rule": "Use semantic color tokens (--color-fg-*, --color-bg-*, --color-border-*, --color-primary-*, --color-accent-*, --color-success-*, --color-warning-*, --color-error-*) for all color values in component code.",
+        "examples": ["--color-fg-default", "--color-bg-raised", "--color-primary-default", "--color-error-subtle"]
+      },
+      {
+        "category": "spacing",
+        "rule": "Use spacing tokens (--spacing-0 through --spacing-24) for all padding, margin, and gap values. The scale is 4px-based.",
+        "examples": ["--spacing-2", "--spacing-4", "--spacing-6"]
+      },
+      {
+        "category": "radius",
+        "rule": "Use radius tokens (--radius-none through --radius-full) for all border-radius values.",
+        "examples": ["--radius-sm", "--radius-md", "--radius-full"]
+      },
+      {
+        "category": "shadow",
+        "rule": "Use shadow tokens (--shadow-xs through --shadow-2xl) for all box-shadow values. Use --shadow-focus-ring for focus indicators.",
+        "examples": ["--shadow-sm", "--shadow-focus-ring", "--shadow-focus-ring-error"]
+      },
+      {
+        "category": "typography",
+        "rule": "Use typography tokens for all font-family, font-size, font-weight, line-height, and letter-spacing values.",
+        "examples": ["--typography-font-family-sans", "--typography-font-size-sm", "--typography-font-weight-semibold"]
+      },
+      {
+        "category": "motion",
+        "rule": "Use motion tokens for all transition duration and easing values in animations.",
+        "examples": ["--motion-duration-fast", "--motion-duration-normal", "--motion-easing-ease-out", "--motion-easing-spring"]
+      },
+      {
+        "category": "state",
+        "rule": "Use state tokens for interactive states. Use --state-disabled-opacity for disabled elements, --state-focus-ring-color for custom focus rings.",
+        "examples": ["--state-disabled-opacity", "--state-focus-ring-color", "--state-hover-overlay-subtle"]
+      }
+    ],
+    "forbidden": [
+      {
+        "pattern": "--color-primitive-*",
+        "reason": "Primitive color tokens are the source layer. Use semantic tokens instead so components respond to theme changes.",
+        "severity": "error"
+      },
+      {
+        "pattern": "hardcoded hex values",
+        "examples": ["#3b82f6", "#ffffff", "#000000"],
+        "reason": "Hardcoded colors bypass the token system and break theming.",
+        "severity": "error"
+      },
+      {
+        "pattern": "hardcoded pixel spacing",
+        "examples": ["padding: 13px", "gap: 7px", "margin: 1.3rem"],
+        "reason": "Spacing must map to the 4px-based spacing token scale.",
+        "severity": "error"
+      },
+      {
+        "pattern": "opacity: 0.5 for disabled",
+        "reason": "Use var(--state-disabled-opacity) so the disabled opacity can be adjusted globally.",
+        "severity": "warning"
+      }
+    ]
+  },
+
+  "componentRules": {
+    "Button": {
+      "do": [
+        "Use variant='primary' for the single most important action in a view.",
+        "Use variant='danger' for destructive actions, always with a Dialog confirmation.",
+        "Set loading and disabled together during async operations.",
+        "Use variant='ghost' for icon-only or low-priority actions."
+      ],
+      "dont": [
+        "Never place more than one variant='primary' Button in the same visual group.",
+        "Never use Button for page navigation — use anchor or router Link.",
+        "Never remove the button focus ring.",
+        "Never hardcode background or text colors."
+      ],
+      "preferOver": ["<button> with manual styling", "Anchor tags styled as buttons"]
+    },
+    "Input": {
+      "do": [
+        "Always associate with a label via FormField or label prop.",
+        "Use error prop for validation messages.",
+        "Use helperText for format hints."
+      ],
+      "dont": [
+        "Never use for multi-line content — use Textarea.",
+        "Never use placeholder as a substitute for a label."
+      ],
+      "useInstead": {
+        "multiLine": "Textarea",
+        "fixedOptions": "Select"
+      }
+    },
+    "Badge": {
+      "do": [
+        "Choose variant based on semantic meaning, not color preference.",
+        "Keep label text to 1–3 words."
+      ],
+      "dont": [
+        "Never make Badge interactive.",
+        "Never use Badge to replace Alert for page-level messages."
+      ]
+    },
+    "Card": {
+      "do": [
+        "Use variant='border' as default.",
+        "Use variant='ghost' for nested cards.",
+        "Only set hoverable={true} for fully-clickable navigation cards."
+      ],
+      "dont": [
+        "Never nest Card/border inside Card/border.",
+        "Never use Card as a full-page layout wrapper — use Container."
+      ]
+    },
+    "Text": {
+      "do": [
+        "Use color='muted' for secondary copy.",
+        "Use color='subtle' for captions and metadata."
+      ],
+      "dont": [
+        "Never use Text for headings — use Heading.",
+        "Never apply inline font-size or color styles."
+      ]
+    },
+    "Heading": {
+      "do": [
+        "Always set level to match document hierarchy.",
+        "Never skip heading levels."
+      ],
+      "dont": [
+        "Never use more than one h1 per page.",
+        "Never use Heading for body copy."
+      ]
+    },
+    "Checkbox": {
+      "do": [
+        "Use for selecting any number of options (including none).",
+        "Use indeterminate for partial group selection."
+      ],
+      "dont": [
+        "Never use for a binary toggle — use Switch.",
+        "Never use for single-exclusive selection — use Radio."
+      ]
+    },
+    "Radio": {
+      "do": [
+        "Always wrap in RadioGroup.",
+        "Use for 2–6 mutually exclusive options."
+      ],
+      "dont": [
+        "Never manage radio state manually outside RadioGroup.",
+        "Never use for > 6 options — use Select."
+      ]
+    },
+    "Select": {
+      "do": [
+        "Use for 5+ options.",
+        "Always provide a placeholder for required fields."
+      ],
+      "dont": [
+        "Never use for fewer than 3 options — use Radio.",
+        "Never render <option> children manually."
+      ]
+    },
+    "Switch": {
+      "do": [
+        "Use for settings that apply immediately."
+      ],
+      "dont": [
+        "Never use inside a form that requires explicit submission — use Checkbox."
+      ]
+    },
+    "FormField": {
+      "do": [
+        "Wrap every form control in FormField.",
+        "Pass error from form validation state."
+      ],
+      "dont": [
+        "Never build custom label/error layouts outside FormField.",
+        "Never pass both helperText and error simultaneously."
+      ]
+    },
+    "Dialog": {
+      "do": [
+        "Use for destructive confirmations, focused forms, and detail views.",
+        "Always include DialogTitle.",
+        "Place cancel left, confirm right in DialogFooter."
+      ],
+      "dont": [
+        "Never use for non-blocking notifications — use Toast.",
+        "Never stack multiple Dialogs.",
+        "Never auto-open without user intent."
+      ]
+    },
+    "Tooltip": {
+      "do": [
+        "Use for icon buttons where the label is not always visible.",
+        "Keep content under 10 words."
+      ],
+      "dont": [
+        "Never put interactive elements inside tooltip content.",
+        "Never use as the only means of conveying critical information."
+      ]
+    },
+    "Alert": {
+      "do": [
+        "Use for persistent, in-context status messages.",
+        "Always match variant to semantic meaning."
+      ],
+      "dont": [
+        "Never use for transient messages — use Toast.",
+        "Never use for per-field validation — use error prop on control."
+      ]
+    },
+    "Toast": {
+      "do": [
+        "Use for transient confirmations after user actions.",
+        "Always trigger via useToast hook."
+      ],
+      "dont": [
+        "Never use for destructive confirmations — use Dialog.",
+        "Never stack more than 3 toasts.",
+        "Never use for persistent status — use Alert."
+      ]
+    },
+    "Tabs": {
+      "do": [
+        "Use for secondary navigation within a page.",
+        "Always provide a default active tab."
+      ],
+      "dont": [
+        "Never use for primary site navigation.",
+        "Never exceed 7 tab items."
+      ]
+    },
+    "Stack": {
+      "do": [
+        "Use as the primary flex layout primitive.",
+        "Control spacing via gap — never add margin to individual children."
+      ],
+      "dont": [
+        "Never add margin/padding to Stack children for spacing.",
+        "Never hardcode gap values."
+      ]
+    },
+    "Container": {
+      "do": [
+        "Use as the outermost page content wrapper.",
+        "Use as='main' for primary content."
+      ],
+      "dont": [
+        "Never nest Container inside Container.",
+        "Never set custom max-width values."
+      ]
+    },
+    "Avatar": {
+      "do": [
+        "Always provide alt text when src is set.",
+        "Always provide name for initials fallback."
+      ],
+      "dont": [
+        "Never render more than 3 standalone Avatars side by side — use AvatarGroup.",
+        "Never apply custom border-radius."
+      ]
+    },
+    "AvatarGroup": {
+      "do": [
+        "Use for 3 or more avatars in compact contexts.",
+        "Set size on AvatarGroup, not individual Avatar children."
+      ],
+      "dont": [
+        "Never mix sizes across Avatar children.",
+        "Never use for fewer than 3 avatars."
+      ]
+    }
+  },
+
+  "forbiddenPatterns": [
+    {
+      "id": "inline-style-tokens",
+      "description": "Using inline styles to set values that should come from design tokens",
+      "pattern": "style={{ color: '...', padding: '...', borderRadius: '...' }}",
+      "severity": "error",
+      "remedy": "Use component props (variant, size, padding) or CSS custom properties via className."
+    },
+    {
+      "id": "hardcoded-colors-tailwind",
+      "description": "Hardcoded Tailwind color classes that bypass the semantic token system",
+      "pattern": "className='text-indigo-500 bg-red-100 border-red-200'",
+      "severity": "error",
+      "remedy": "Use semantic component variants: <Alert variant='error'>, <Text color='accent'>."
+    },
+    {
+      "id": "custom-button",
+      "description": "Custom-styled <button> element instead of Button component",
+      "pattern": "<button className='bg-black text-white px-4 py-2 rounded'>...",
+      "severity": "error",
+      "remedy": "Use <Button variant='primary'>..."
+    },
+    {
+      "id": "raw-form-elements",
+      "description": "Raw <input>, <label>, <select> without design system wrappers",
+      "pattern": "<label>...<input className='border rounded px-3'>",
+      "severity": "error",
+      "remedy": "Use <FormField label='...'><Input /></FormField>."
+    },
+    {
+      "id": "removed-focus-ring",
+      "description": "Removing focus rings from interactive elements",
+      "pattern": "outline: none | outline: 0 | focus:outline-none without replacement",
+      "severity": "error",
+      "remedy": "Never remove focus rings. The design system provides --shadow-focus-ring."
+    },
+    {
+      "id": "skipped-heading-levels",
+      "description": "Skipping heading levels breaks screen reader navigation",
+      "pattern": "h1 followed by h3 (skipping h2)",
+      "severity": "error",
+      "remedy": "Use Heading level prop sequentially. Size and level are independent props."
+    },
+    {
+      "id": "multiple-primary-buttons",
+      "description": "More than one primary Button in the same visual group",
+      "pattern": "Two or more <Button variant='primary'> siblings",
+      "severity": "error",
+      "remedy": "Demote secondary actions to variant='secondary' or variant='ghost'."
+    },
+    {
+      "id": "toast-for-confirmation",
+      "description": "Using Toast for destructive action confirmations",
+      "pattern": "toast({ title: 'Are you sure?' })",
+      "severity": "error",
+      "remedy": "Use Dialog with DialogTitle, description, and cancel/confirm Button pair."
+    },
+    {
+      "id": "primitive-tokens-in-components",
+      "description": "Using --color-primitive-* tokens directly in component code",
+      "pattern": "var(--color-primitive-indigo-600)",
+      "severity": "error",
+      "remedy": "Use the corresponding semantic token: var(--color-accent-default)."
+    },
+    {
+      "id": "missing-avatar-alt",
+      "description": "Avatar with src but no alt attribute",
+      "pattern": "<Avatar src='...' /> without alt prop",
+      "severity": "error",
+      "remedy": "Always provide alt matching the person's full name."
+    },
+    {
+      "id": "unlabeled-icon-button",
+      "description": "Icon-only Button without an accessible label",
+      "pattern": "<Button variant='ghost'><IconX /></Button> without aria-label",
+      "severity": "error",
+      "remedy": "Add aria-label='Close' (or descriptive label) to the Button."
+    },
+    {
+      "id": "dialog-without-title",
+      "description": "Dialog rendered without DialogTitle",
+      "pattern": "DialogContent without DialogTitle child",
+      "severity": "error",
+      "remedy": "Always include <DialogTitle> inside <DialogHeader>. May be visually hidden but must be present."
+    },
+    {
+      "id": "nested-containers",
+      "description": "Container nested inside Container",
+      "pattern": "<Container><Container>",
+      "severity": "warning",
+      "remedy": "Use nested Stack for inner layout instead of nested Containers."
+    },
+    {
+      "id": "stack-children-with-margin",
+      "description": "Adding margin to Stack children for spacing instead of using gap",
+      "pattern": "Direct Stack children with margin-top or margin-bottom classes",
+      "severity": "warning",
+      "remedy": "Set gap on Stack. Remove margin from children."
+    }
+  ],
+
+  "compositionRules": [
+    {
+      "parent": "FormField",
+      "allowedChildren": ["Input", "Select", "Textarea", "Checkbox", "Switch", "RadioGroup"],
+      "requiredChildren": ["one of: Input | Select | Textarea | Checkbox | Switch | RadioGroup"],
+      "notes": "FormField manages label, helper text, and error propagation for its child control."
+    },
+    {
+      "parent": "Dialog",
+      "allowedChildren": ["DialogTrigger", "DialogContent"],
+      "requiredChildren": ["DialogTrigger", "DialogContent"],
+      "notes": "DialogContent must contain DialogTitle for accessibility."
+    },
+    {
+      "parent": "DialogContent",
+      "allowedChildren": ["DialogHeader", "DialogFooter", "Stack", "FormField", "Text"],
+      "requiredChildren": ["DialogHeader > DialogTitle"],
+      "notes": "DialogTitle may be visually hidden but must be present in the DOM."
+    },
+    {
+      "parent": "DialogFooter",
+      "allowedChildren": ["Button"],
+      "notes": "Place cancel/secondary action on the left, confirm/primary action on the right."
+    },
+    {
+      "parent": "Tabs",
+      "allowedChildren": ["TabsList", "TabsContent"],
+      "requiredChildren": ["TabsList", "TabsContent"],
+      "notes": "TabsList must contain TabsTrigger items. Each TabsTrigger value must match a TabsContent value."
+    },
+    {
+      "parent": "Popover",
+      "allowedChildren": ["PopoverTrigger", "PopoverContent"],
+      "requiredChildren": ["PopoverTrigger", "PopoverContent"]
+    },
+    {
+      "parent": "DropdownMenu",
+      "allowedChildren": ["DropdownMenuTrigger", "DropdownMenuContent"],
+      "requiredChildren": ["DropdownMenuTrigger", "DropdownMenuContent"]
+    },
+    {
+      "parent": "DropdownMenuContent",
+      "allowedChildren": ["DropdownMenuItem", "DropdownMenuSeparator", "DropdownMenuLabel", "DropdownMenuGroup"],
+      "requiredChildren": ["one or more DropdownMenuItem"]
+    },
+    {
+      "parent": "AvatarGroup",
+      "allowedChildren": ["Avatar"],
+      "requiredChildren": ["Avatar"],
+      "notes": "Set size on AvatarGroup, not on individual Avatar children."
+    },
+    {
+      "parent": "RadioGroup",
+      "allowedChildren": ["Radio"],
+      "requiredChildren": ["two or more Radio"],
+      "notes": "RadioGroup manages shared name, value, onChange, and disabled state for all child Radio items."
+    },
+    {
+      "parent": "Breadcrumbs",
+      "allowedChildren": ["BreadcrumbItem"],
+      "requiredChildren": ["two or more BreadcrumbItem"],
+      "notes": "The last BreadcrumbItem must have current={true} and no href."
+    },
+    {
+      "parent": "Card",
+      "forbiddenNesting": "Card variant='border' or variant='shadow' inside another Card with the same variant",
+      "remedy": "Use variant='ghost' for inner cards."
+    },
+    {
+      "parent": "Container",
+      "forbiddenNesting": "Container inside Container",
+      "remedy": "Use Stack for inner layout."
+    }
+  ],
+
+  "accessibilityBaseline": {
+    "wcagLevel": "AA",
+    "version": "2.1",
+    "requirements": [
+      {
+        "id": "color-contrast-normal",
+        "rule": "Normal text (< 18pt) must have a minimum 4.5:1 contrast ratio against its background.",
+        "wcagCriteria": "1.4.3"
+      },
+      {
+        "id": "color-contrast-large",
+        "rule": "Large text (≥ 18pt or bold ≥ 14pt) must have a minimum 3:1 contrast ratio.",
+        "wcagCriteria": "1.4.3"
+      },
+      {
+        "id": "color-not-sole-means",
+        "rule": "Never communicate meaning with color alone — always pair with a text label, icon, or pattern.",
+        "wcagCriteria": "1.4.1"
+      },
+      {
+        "id": "focus-visible",
+        "rule": "All interactive elements must show a visible focus indicator. Use --shadow-focus-ring. Never set outline: none without an equivalent replacement.",
+        "wcagCriteria": "2.4.7"
+      },
+      {
+        "id": "focus-order",
+        "rule": "Focus order must follow a logical reading sequence. Do not use positive tabIndex values.",
+        "wcagCriteria": "2.4.3"
+      },
+      {
+        "id": "dialog-focus",
+        "rule": "When a Dialog opens, focus moves to the first interactive element or dialog title. When it closes, focus returns to the trigger.",
+        "wcagCriteria": "2.4.3"
+      },
+      {
+        "id": "form-labels",
+        "rule": "Every form control must have an associated visible label. FormField handles this automatically. Use aria-label only as a last resort.",
+        "wcagCriteria": "1.3.1, 3.3.2"
+      },
+      {
+        "id": "form-errors",
+        "rule": "Error messages must be programmatically associated with their control via aria-describedby. FormField handles this automatically.",
+        "wcagCriteria": "3.3.1"
+      },
+      {
+        "id": "heading-hierarchy",
+        "rule": "Do not skip heading levels. Use Heading level prop to maintain a logical document outline.",
+        "wcagCriteria": "1.3.1"
+      },
+      {
+        "id": "image-alt",
+        "rule": "Informative images require descriptive alt text. Decorative images require alt=''.",
+        "wcagCriteria": "1.1.1"
+      },
+      {
+        "id": "icon-button-label",
+        "rule": "Icon-only buttons must have aria-label or aria-labelledby providing a text alternative.",
+        "wcagCriteria": "4.1.2"
+      },
+      {
+        "id": "reduced-motion",
+        "rule": "All animations must respect prefers-reduced-motion. Framer Motion components must include a reducedMotion variant.",
+        "wcagCriteria": "2.3.3"
+      }
+    ]
+  },
+
+  "componentDecisionMatrix": [
+    {
+      "useCase": "Primary call-to-action",
+      "component": "Button",
+      "props": { "variant": "primary" },
+      "notes": "Only one per visual group."
+    },
+    {
+      "useCase": "Destructive action",
+      "component": "Button + Dialog confirmation",
+      "props": { "variant": "danger" },
+      "notes": "Always confirm destructive actions with a Dialog before executing."
+    },
+    {
+      "useCase": "Binary toggle (immediate effect)",
+      "component": "Switch"
+    },
+    {
+      "useCase": "Binary selection (form submit required)",
+      "component": "Checkbox"
+    },
+    {
+      "useCase": "Select one from 2–4 options (all visible)",
+      "component": "Radio inside RadioGroup"
+    },
+    {
+      "useCase": "Select one from 5+ options",
+      "component": "Select"
+    },
+    {
+      "useCase": "Transient success/error after action",
+      "component": "Toast",
+      "notes": "Trigger via useToast()."
+    },
+    {
+      "useCase": "Persistent inline status message",
+      "component": "Alert",
+      "notes": "Stays in the layout until dismissed or resolved."
+    },
+    {
+      "useCase": "Blocking confirmation or focused form",
+      "component": "Dialog"
+    },
+    {
+      "useCase": "Contextual rich content anchored to trigger",
+      "component": "Popover"
+    },
+    {
+      "useCase": "Short label for icon or control",
+      "component": "Tooltip",
+      "notes": "Content must be non-interactive and under 10 words."
+    },
+    {
+      "useCase": "Overflow or context action menu",
+      "component": "DropdownMenu"
+    },
+    {
+      "useCase": "Status or category label on entity",
+      "component": "Badge",
+      "notes": "Choose variant based on semantic meaning."
+    },
+    {
+      "useCase": "Section navigation within a page",
+      "component": "Tabs"
+    },
+    {
+      "useCase": "Hierarchical location indicator",
+      "component": "Breadcrumbs",
+      "notes": "Only for pages 2+ levels deep."
+    },
+    {
+      "useCase": "User photo or initials",
+      "component": "Avatar",
+      "notes": "Always provide name prop for fallback."
+    },
+    {
+      "useCase": "Multiple users in compact space",
+      "component": "AvatarGroup",
+      "notes": "Use for 3 or more avatars."
+    },
+    {
+      "useCase": "Inline or block code snippet",
+      "component": "Code",
+      "props": { "inline": true }
+    },
+    {
+      "useCase": "Grouping related content",
+      "component": "Card",
+      "props": { "variant": "border" }
+    },
+    {
+      "useCase": "Constraining page max-width",
+      "component": "Container"
+    },
+    {
+      "useCase": "Flex layout with token-based gap",
+      "component": "Stack"
+    },
+    {
+      "useCase": "Visual section separator",
+      "component": "Divider",
+      "notes": "Only when gap is insufficient to convey the break."
+    }
+  ]
+}
