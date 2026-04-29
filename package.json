@@ -11,7 +11,8 @@
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "./styles": "./dist/styles/global.css"
+    "./styles": "./dist/style.css",
+    "./style.css": "./dist/style.css"
   },
   "scripts": {
     "dev": "vite",

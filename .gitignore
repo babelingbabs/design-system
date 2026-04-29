@@ -23,3 +23,9 @@ src/tokens/generated/variables.css
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+.gitnexus
+
+# Claude Code / AI agent artifacts
+.claude/
+CLAUDE.md
+AGENTS.md
